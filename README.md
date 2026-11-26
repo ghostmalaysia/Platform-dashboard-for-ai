@@ -1,6 +1,6 @@
-# ruangAI · Termux workspace
+# Ghost Platform · Termux workspace
 
-Dashboard lokal untuk berbual dengan beberapa ejen AI, meminta mereka membandingkan jawapan, dan menghantar cadangan arahan ke Termux pada telefon yang sama.
+Dashboard lokal untuk berbual dengan beberapa ejen AI, meminta mereka membandingkan jawapan, dan menghantar cadangan arahan ke Termux pada telefon yang sama. Susun atur pemilihan model dan mod Chat/AI Agent mengambil inspirasi umum daripada aliran kerja produk AI seperti Abacus.AI, dengan identiti dan sambungan Termux Ghost Platform.
 
 ## Mula dalam Termux
 
@@ -11,6 +11,8 @@ node server.js
 ```
 
 Buka `http://127.0.0.1:3000` pada pelayar Android. Tiada pakej Node tambahan diperlukan. Hentikan server dengan `Ctrl+C`.
+
+Pilih tema hitam, biru gelap atau hijau hacker serta Bahasa Melayu atau English melalui **Penyedia AI → Penampilan**. Tetapan disimpan dalam pelayar peranti. Mod **Chat** menjawab seperti perbualan biasa; **AI Agent** meminta model merancang tugasan dan tindakan dengan lebih berstruktur. Arahan Termux masih perlu disemak dan diluluskan secara berasingan.
 
 ## Ejen yang disokong
 
@@ -31,3 +33,5 @@ Pilih sekurang-kurangnya dua ejen yang tersedia, kemudian tekan **Kerjasama AI**
 ## Termux lokal
 
 Server hanya bind pada `127.0.0.1`. Arahan daripada AI boleh dipindahkan ke terminal untuk disemak, atau **Jalankan dengan izin** akan meminta pengesahan sebelum menjalankan arahan. Output Termux dimasukkan ke konteks chat untuk giliran seterusnya. Arahan berjalan sebagai pengguna Termux yang menjalankan server, dengan akses yang sama kepada fail dan program pengguna itu. Jangan dedahkan server ke LAN atau internet.
+
+Pendaftaran pelanggan, memori awan dan penyegerakan Supabase belum disambungkan dalam build ini. Jangan anggap akaun atau perbualan telah disimpan ke awan.

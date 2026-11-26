@@ -73,10 +73,11 @@ function parseCodexOutput(raw) {
   return found.at(-1) || raw;
 }
 
-async function callApiProvider(id, messages, key = getKey(id)) {
+async function callApiProvider(id, messages, key = getKey(id), mode = 'chat') {
   const provider = providers[id];
   if (!provider || !key) throw new Error(`Sambungkan kunci ${provider?.name || 'AI'} dahulu.`);
-  const promptMessages = [{ role: 'system', content: systemPrompt }, ...messages];
+  const modePrompt = mode === 'agent' ? ' Work in agent-planning mode: break down the user request, use available context, and propose the next safe action. Do not claim to have executed tools. Termux commands still require explicit user approval in the dashboard.' : '';
+  const promptMessages = [{ role: 'system', content: systemPrompt + modePrompt }, ...messages];
   let endpoint;
   let headers;
   let body;
@@ -84,7 +85,7 @@ async function callApiProvider(id, messages, key = getKey(id)) {
     endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${provider.model}:generateContent?key=${encodeURIComponent(key)}`;
     headers = { 'Content-Type': 'application/json' };
     body = {
-      system_instruction: { parts: [{ text: systemPrompt }] },
+      system_instruction: { parts: [{ text: systemPrompt + modePrompt }] },
       contents: messages.map(item => ({ role: item.role === 'assistant' ? 'model' : 'user', parts: [{ text: item.content }] })),
       generationConfig: { maxOutputTokens: 1200 },
     };
@@ -101,8 +102,9 @@ async function callApiProvider(id, messages, key = getKey(id)) {
   return text || 'Model tidak memulangkan teks.';
 }
 
-async function callAgent(id, messages) {
-  const prompt = `${systemPrompt}\n\nPerbualan:\n${messages.map(item => `${item.role === 'assistant' ? 'Assistant' : 'User'}: ${item.content}`).join('\n\n')}`;
+async function callAgent(id, messages, mode = 'chat') {
+  const modePrompt = mode === 'agent' ? '\nAgent planning mode: create a concise plan and propose safe next actions. Never claim commands ran. Termux commands require the user\'s approval in the dashboard.' : '';
+  const prompt = `${systemPrompt}${modePrompt}\n\nPerbualan:\n${messages.map(item => `${item.role === 'assistant' ? 'Assistant' : 'User'}: ${item.content}`).join('\n\n')}`;
   if (id === 'codex') {
     const result = await runProcess('codex', ['exec', '--json', '--sandbox', 'read-only', '--skip-git-repo-check', prompt]);
     return parseCodexOutput(result.stdout);
@@ -114,8 +116,8 @@ async function callAgent(id, messages) {
   throw new Error('Ejen lokal tidak dikenali.');
 }
 
-async function askParticipant(id, messages) {
-  return providers[id] ? callApiProvider(id, messages) : callAgent(id, messages);
+async function askParticipant(id, messages, mode = 'chat') {
+  return providers[id] ? callApiProvider(id, messages, getKey(id), mode) : callAgent(id, messages, mode);
 }
 
 function availableCommand(command) {
@@ -168,7 +170,8 @@ const server = http.createServer(async (req, res) => {
         secret = getKey(provider);
         if (!providers[provider] && !localAgents[provider]) return send(res, 400, { error: 'Penyedia AI tidak dikenali.' });
         if (providers[provider] && !secret) return send(res, 400, { error: `Sambungkan kunci ${providers[provider].name} dahulu.` });
-        const reply = await askParticipant(provider, clean);
+        const mode = request.mode === 'agent' ? 'agent' : 'chat';
+        const reply = await askParticipant(provider, clean, mode);
         return send(res, 200, { reply, provider, model: providers[provider]?.model || localAgents[provider].name });
       }
       const { participants, lead } = request;

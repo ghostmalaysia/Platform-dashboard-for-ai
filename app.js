@@ -16,7 +16,8 @@ const localeMessages = {
     collabTitle: 'Panel kolaborasi', collabCaption: 'Pilih sekurang-kurangnya 2 ejen untuk banding dan satukan jawapan.', collabButton: 'Kerjasama AI', terminalTitle: 'Terminal lokal', terminalSubtitle: 'Arahan dijalankan pada Termux di telefon ini. Semak arahan sebelum menjalankannya.', deviceLabel: 'PERANTI BERSAMBUNG', local: 'LOKAL', ready: 'sedia', commandLabel: 'ARAHAN YANG AKAN DIJALANKAN', commandPlaceholder: 'Contoh: pwd && ls -la', run: 'Jalankan', output: 'OUTPUT', clear: 'Kosongkan', waiting: 'Menunggu arahan…', terminalFoot: '⚠ Berjalan sebagai pengguna Termux semasa.', notRun: 'Belum ada arahan', terminalNoteTitle: 'Arahan daripada AI perlu disemak', terminalNoteText: 'Arahan AI hanya berjalan selepas awak beri izin.', footer: 'Dashboard lokal untuk Termux',
     settingsEyebrow: 'TETAPAN', settingsTitle: 'Penyedia & ejen', settingsSubtitle: 'Codex dan OpenCode berjalan melalui CLI lokal. API cloud menggunakan kunci yang awak sediakan.', appearance: 'Penampilan', appearanceDescription: 'Pilih warna dan bahasa Ghost Platform.', themeLabel: 'Tema warna', languageLabel: 'Bahasa', themeBlack: 'Hitam', themeBlue: 'Biru gelap', themeHacker: 'Hijau hacker', languageMalay: 'Bahasa Melayu', languageEnglish: 'English', security: 'Kunci tidak dipaparkan semula atau disimpan ke fail; kunci yang ditaip di sini hanya kekal dalam memori sehingga server dihentikan. Google dan Groq boleh mengenakan bayaran jika projek/akaun bukan tier percuma.', modalFooter: 'Jawapan kolaborasi dihantar kepada ejen yang dipilih. Jangan masukkan data sulit ke API cloud.', done: 'Selesai',
     modeChat: 'Chat', modeChatDescription: 'Bual dengan model yang dipilih', modeAgent: 'AI Agent', modeAgentDescription: 'Rancang tugasan dan tindakan Termux.', connected: 'Disambung', notConnected: 'Belum disambung', cliReady: 'CLI tersedia', cliMissing: 'CLI tidak ditemui', keySaved: 'Masukkan kunci dahulu.', keyPlaceholder: 'Kunci telah disambung (tidak dipaparkan)', save: 'Simpan', testApi: 'Uji API', testing: 'Menguji…', disconnect: 'Putuskan', keyFoot: 'Kunci dihantar kepada penyedia ini apabila awak berbual atau menekan Uji API.',
-    collabAvailable: n => `${n} ejen sedia · pilih sekurang-kurangnya 2 untuk berbincang.`, collabNeedMore: 'Sambungkan sekurang-kurangnya 2 ejen untuk memulakan kolaborasi.', pending: name => `${name} sedang berfikir…`, panelPending: n => `Panel ${n} ejen`, resultReady: 'Panel AI selesai membandingkan jawapan.', resultInContext: 'Hasil Termux tersedia dalam konteks chat.', commandReview: 'Semak dalam Terminal →', commandRun: 'Jalankan dengan izin', commandMoved: 'Arahan dimasukkan untuk semakan. Belum dijalankan.', commandConfirm: 'Benarkan arahan ini berjalan sebagai pengguna Termux?', terminalConnected: 'Termux bersambung', serverOffline: 'Server lokal tidak menjawab', startServer: 'Mulakan semula node server.js',
+    collabAvailable: n => `${n} ejen sedia · pilih sekurang-kurangnya 2 untuk berbincang.`, collabNeedMore: 'Sambungkan sekurang-kurangnya 2 ejen untuk memulakan kolaborasi.', pending: name => `${name} sedang berfikir…`, panelPending: n => `Panel ${n} ejen`, resultReady: 'Panel AI selesai membandingkan jawapan.', resultInContext: 'Hasil Termux (dipendekkan) tersedia dalam konteks chat.', commandReview: 'Semak dalam Terminal →', commandRun: 'Jalankan dengan izin', commandMoved: 'Arahan dimasukkan untuk semakan. Belum dijalankan.', commandConfirm: 'Benarkan arahan ini berjalan sebagai pengguna Termux?', terminalConnected: 'Termux bersambung', serverOffline: 'Server lokal tidak menjawab', startServer: 'Mulakan semula node server.js',
+    errorPrefix: 'Ralat', requestFailed: 'Permintaan gagal.', keySaveFailed: 'Kunci tidak dapat disimpan.', keySavedNotice: n => `${n} disambung untuk sesi server ini.`, keyDisconnectedNotice: 'Kunci sesi diputuskan.', testFailed: n => `Ujian gagal: ${n}`, testOk: n => `${n}: API berjaya menjawab.`, collabPromptNeeded: 'Tulis soalan atau tugasan untuk panel AI dahulu.', collabSelectTwo: 'Pilih sekurang-kurangnya dua ejen yang tersedia.', collabFailed: 'Kolaborasi gagal.', panelView: 'pandangan panel', panelSynthesis: 'sintesis kolaborasi', couldNotRespond: 'Tidak dapat menjawab', panelError: 'ralat', collabErrorPrefix: 'Ralat kolaborasi', commandSendFailed: 'Arahan gagal dihantar.', noOutput: '(Tiada output)', commandFailedText: 'Arahan gagal.', timedOut: '\n\n[Masa arahan tamat selepas 30 saat]', sentAt: 'Dihantar', historyMessages: n => `${n} mesej dalam sesi ini`, toolsChecking: 'Memeriksa alat lokal…', toolsFailed: n => `Pemeriksaan alat gagal: ${n}`, checkAgain: 'Semak semula sambungan.', availableShort: 'Tersedia', localReady: 'Sedia', localOffline: 'Terputus', deviceOffline: 'PERANTI TERPUTUS', terminalOffline: 'terputus', settingsAria: 'Tetapan penyedia', sendAria: 'Hantar mesej', closeAria: 'Tutup tetapan', skipLink: 'Langsung ke chat', agentReadyDesc: 'Boleh dipilih untuk chat atau panel kolaborasi. CLI berjalan pada projek semasa dengan mod baca/rancang.', agentMissingDesc: n => `Pasang dan log masuk ke ${n} dalam Termux. Kemudian tekan Semak semula sambungan.`, keyEnter: n => `Masukkan kunci ${n}`, keyAria: n => `Kunci API ${n}`,
   },
   en: {
     workspaceType: 'Personal', workspaceSection: 'WORKSPACE', navChat: 'AI chat', navTerminal: 'Local terminal', navTools: 'Tools & integrations', navProviders: 'AI providers', coreAgents: 'CORE AGENTS', freeOptions: 'FREE OPTIONS', localTermux: 'Local Termux', checkConnection: 'Check connection', profileName: 'Ghost Platform user', profileSubtitle: 'Local device', localTag: 'LOCAL', chatView: 'AI chat', terminalView: 'Local terminal', toolsView: 'Tools & integrations',
@@ -26,17 +27,25 @@ const localeMessages = {
     collabTitle: 'Collaboration panel', collabCaption: 'Choose at least 2 agents to compare and combine their answers.', collabButton: 'Collaborate', terminalTitle: 'Local terminal', terminalSubtitle: 'Commands run in Termux on this phone. Review commands before running them.', deviceLabel: 'DEVICE CONNECTED', local: 'LOCAL', ready: 'ready', commandLabel: 'COMMAND TO RUN', commandPlaceholder: 'Example: pwd && ls -la', run: 'Run', output: 'OUTPUT', clear: 'Clear', waiting: 'Waiting for a command…', terminalFoot: '⚠ Runs as the current Termux user.', notRun: 'No commands yet', terminalNoteTitle: 'Review AI commands', terminalNoteText: 'AI commands only run after you approve them.', footer: 'Local dashboard for Termux',
     settingsEyebrow: 'SETTINGS', settingsTitle: 'Providers & agents', settingsSubtitle: 'Codex and OpenCode run through local CLIs. Cloud APIs use keys you provide.', appearance: 'Appearance', appearanceDescription: 'Choose Ghost Platform colors and language.', themeLabel: 'Color theme', languageLabel: 'Language', themeBlack: 'Black', themeBlue: 'Dark blue', themeHacker: 'Hacker green', languageMalay: 'Bahasa Melayu', languageEnglish: 'English', security: 'API keys are not shown again or written to a file. Keys entered here remain in server memory until the server stops. Google and Groq may charge if the project/account is not on a free tier.', modalFooter: 'Collaboration answers are sent to the selected agents. Do not send sensitive data to cloud APIs.', done: 'Done',
     modeChat: 'Chat', modeChatDescription: 'Talk to the selected model', modeAgent: 'AI Agent', modeAgentDescription: 'Plan tasks and Termux actions.', connected: 'Connected', notConnected: 'Not connected', cliReady: 'CLI available', cliMissing: 'CLI not found', keySaved: 'Enter a key first.', keyPlaceholder: 'Key connected (hidden)', save: 'Save', testApi: 'Test API', testing: 'Testing…', disconnect: 'Disconnect', keyFoot: 'This provider receives the key when you chat or press Test API.',
-    collabAvailable: n => `${n} agents ready · select at least 2 to collaborate.`, collabNeedMore: 'Connect at least 2 agents to start collaborating.', pending: name => `${name} is thinking…`, panelPending: n => `${n}-agent panel`, resultReady: 'The AI panel has compared its answers.', resultInContext: 'Termux output is available in chat context.', commandReview: 'Review in Terminal →', commandRun: 'Run with approval', commandMoved: 'Command added for review. It has not run yet.', commandConfirm: 'Allow this command to run as the Termux user?', terminalConnected: 'Termux connected', serverOffline: 'Local server is not responding', startServer: 'Restart node server.js',
+    collabAvailable: n => `${n} agents ready · select at least 2 to collaborate.`, collabNeedMore: 'Connect at least 2 agents to start collaborating.', pending: name => `${name} is thinking…`, panelPending: n => `${n}-agent panel`, resultReady: 'The AI panel has compared its answers.', resultInContext: 'Truncated Termux output is available in chat context.', commandReview: 'Review in Terminal →', commandRun: 'Run with approval', commandMoved: 'Command added for review. It has not run yet.', commandConfirm: 'Allow this command to run as the Termux user?', terminalConnected: 'Termux connected', serverOffline: 'Local server is not responding', startServer: 'Restart node server.js',
+    errorPrefix: 'Error', requestFailed: 'Request failed.', keySaveFailed: 'The key could not be saved.', keySavedNotice: n => `${n} connected for this server session.`, keyDisconnectedNotice: 'Session key disconnected.', testFailed: n => `Test failed: ${n}`, testOk: n => `${n}: API responded successfully.`, collabPromptNeeded: 'Write a question or task for the AI panel first.', collabSelectTwo: 'Select at least two available agents.', collabFailed: 'Collaboration failed.', panelView: 'panel view', panelSynthesis: 'collaboration synthesis', couldNotRespond: 'Could not respond', panelError: 'error', collabErrorPrefix: 'Collaboration error', commandSendFailed: 'Command could not be sent.', noOutput: '(No output)', commandFailedText: 'Command failed.', timedOut: '\n\n[Command timed out after 30 seconds]', sentAt: 'Sent', historyMessages: n => `${n} messages in this session`, toolsChecking: 'Checking local tools…', toolsFailed: n => `Could not check tools: ${n}`, checkAgain: 'Refresh the connection check.', availableShort: 'Available', localReady: 'Ready', localOffline: 'Offline', deviceOffline: 'DEVICE OFFLINE', terminalOffline: 'offline', settingsAria: 'Provider settings', sendAria: 'Send message', closeAria: 'Close settings', skipLink: 'Skip to chat', agentReadyDesc: 'Available for chat or the collaboration panel. The CLI runs in the current project in read-only or plan mode.', agentMissingDesc: n => `Install and sign in to ${n} in Termux, then refresh the connection check.`, keyEnter: n => `Enter ${n} API key`, keyAria: n => `${n} API key`,
   },
 };
-let language = localStorage.getItem('ghost-language') || 'ms';
-let theme = localStorage.getItem('ghost-theme') || 'black';
-let workMode = localStorage.getItem('ghost-mode') || 'chat';
+const readSetting = (key, fallback) => { try { return localStorage.getItem(key) ?? fallback; } catch { return fallback; } };
+const writeSetting = (key, value) => { try { localStorage.setItem(key, value); } catch { } };
+let language = readSetting('ghost-language', 'ms');
+let theme = readSetting('ghost-theme', 'black');
+let workMode = readSetting('ghost-mode', 'chat');
 if (!['ms', 'en'].includes(language)) language = 'ms';
 if (!['black', 'blue', 'hacker'].includes(theme)) theme = 'black';
+if (!['chat', 'agent'].includes(workMode)) workMode = 'chat';
 const providersState = new Map();
 const agentsState = new Map();
+const collabSelection = new Set();
+const pendingKeys = new Map();
 const history = [];
+let commandBusy = false;
+let lastFocused = null;
 const $ = selector => document.querySelector(selector);
 const messages = $('#messages');
 const input = $('#chat-input');
@@ -89,12 +98,15 @@ function applyPreferences() {
   $('#chat-input').placeholder = tr('chatPlaceholder');
   $('#chat-input').setAttribute('aria-label', tr('chatPlaceholder'));
   $('#command').placeholder = tr('commandPlaceholder');
+  $('#top-settings').setAttribute('aria-label', tr('settingsAria'));
+  $('#send-button').setAttribute('aria-label', tr('sendAria'));
+  $('#close-settings').setAttribute('aria-label', tr('closeAria'));
+  $('#skip-link').textContent = tr('skipLink');
   $('#crumb-title').textContent = $('#terminal-view').classList.contains('active') ? tr('terminalView') : ($('#tools-view').classList.contains('active') ? tr('toolsView') : tr('chatView'));
   const providerLabels = language === 'ms'
     ? { openrouter: 'OpenRouter · Percuma', gemini: 'Google Gemini · Tier percuma', groq: 'Groq · Tier percuma', codex: 'Codex · CLI lokal', opencode: 'OpenCode · CLI lokal' }
     : { openrouter: 'OpenRouter · Free', gemini: 'Google Gemini · Free tier', groq: 'Groq · Free tier', codex: 'Codex · local CLI', opencode: 'OpenCode · local CLI' };
   for (const option of $('#provider-select').options) option.textContent = providerLabels[option.value];
-  document.querySelectorAll('.suggestions button').forEach(button => { button.dataset.prompt = language === 'ms' ? button.dataset.promptMs : button.dataset.promptEn; });
   updateSelectedProvider();
   renderCollabOptions();
   renderSettings();
@@ -132,7 +144,11 @@ function updateSelectedProvider() {
     ? { openrouter: 'Model percuma auto', gemini: 'Gemini 2.5 Flash', groq: 'GPT OSS 20B', codex: 'Codex CLI', opencode: 'OpenCode Plan' }
     : { openrouter: 'Auto free model', gemini: 'Gemini 2.5 Flash', groq: 'GPT OSS 20B', codex: 'Codex CLI', opencode: 'OpenCode Plan' };
   $('#composer-model').textContent = `${selectedLabel(id)} · ${models[id] || 'local'}`;
-  $('#context-note').textContent = language === 'ms' ? `${history.length} mesej dalam sesi ini` : `${history.length} messages in this session`;
+  $('#context-note').textContent = tr('historyMessages')(history.length);
+  if (!$('#last-run').dataset.ran) {
+    $('#output').textContent = tr('waiting');
+    $('#last-run').textContent = tr('notRun');
+  }
 }
 
 function addText(node, text) {
@@ -153,33 +169,41 @@ function renderMessage(role, content, label) {
     meta.className = 'message-meta';
     meta.textContent = label || selectedLabel($('#provider-select').value);
     body.append(meta);
-    const parts = content.split(/```(?:bash|sh|shell|termux)?\s*\n([\s\S]*?)```/gi);
-    for (let i = 0; i < parts.length; i++) {
-      if (i % 2 === 0) {
-        if (parts[i]) { const block = document.createElement('span'); addText(block, parts[i]); body.append(block); }
-      } else {
-        const commandCard = document.createElement('div');
-        commandCard.className = 'command-suggestion';
-        const code = document.createElement('pre');
-        code.textContent = parts[i].trim();
-        const action = document.createElement('button');
-        action.type = 'button';
-        action.className = 'review-command';
-        action.textContent = tr('commandReview');
-        action.addEventListener('click', () => {
-          $('#command').value = parts[i].trim();
-          switchView('terminal');
-          $('#command').focus();
-          toast(tr('commandMoved'));
-        });
-        const run = document.createElement('button');
-        run.type = 'button';
-        run.className = 'run-suggested-command';
-        run.textContent = tr('commandRun');
-        run.addEventListener('click', () => executeTermuxCommand(parts[i].trim(), true));
-        commandCard.append(code, action, run);
-        body.append(commandCard);
+    const parts = content.split(/```([a-zA-Z0-9_-]*)\s*\n([\s\S]*?)```/g);
+    for (let i = 0; i < parts.length; i += 3) {
+      if (parts[i]) { const block = document.createElement('span'); addText(block, parts[i]); body.append(block); }
+      const lang = (parts[i + 1] || '').toLowerCase();
+      const source = parts[i + 2];
+      if (source === undefined) continue;
+      if (!['bash', 'sh', 'shell', 'termux'].includes(lang)) {
+        const block = document.createElement('pre');
+        block.className = 'code-block';
+        block.textContent = source.trim();
+        body.append(block);
+        continue;
       }
+      const command = source.trim();
+      const commandCard = document.createElement('div');
+      commandCard.className = 'command-suggestion';
+      const code = document.createElement('pre');
+      code.textContent = command;
+      const action = document.createElement('button');
+      action.type = 'button';
+      action.className = 'review-command';
+      action.textContent = tr('commandReview');
+      action.addEventListener('click', () => {
+        $('#command').value = command;
+        switchView('terminal');
+        $('#command').focus();
+        toast(tr('commandMoved'));
+      });
+      const run = document.createElement('button');
+      run.type = 'button';
+      run.className = 'run-suggested-command';
+      run.textContent = tr('commandRun');
+      run.addEventListener('click', () => executeTermuxCommand(command, true));
+      commandCard.append(code, action, run);
+      body.append(commandCard);
     }
   } else addText(body, content);
   wrapper.append(avatar, body);
@@ -215,13 +239,13 @@ async function sendChat(text = input.value.trim()) {
     const response = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ provider: id, mode: workMode, messages: next }) });
     const result = await response.json();
     $('#pending-message')?.remove();
-    if (!response.ok) throw new Error(result.error || 'Permintaan gagal.');
+    if (!response.ok) throw new Error(result.error || tr('requestFailed'));
     history.push({ role: 'user', content: text }, { role: 'assistant', content: result.reply });
     renderMessage('assistant', result.reply, selectedLabel(id));
     updateSelectedProvider();
   } catch (error) {
     $('#pending-message')?.remove();
-    renderMessage('assistant', `Ralat: ${error.message}`, selectedLabel(id));
+    renderMessage('assistant', `${tr('errorPrefix')}: ${error.message}`, selectedLabel(id));
     messages.lastElementChild?.classList.add('message-error');
   } finally {
     busy = false;
@@ -258,8 +282,11 @@ function providerCard(id, item) {
   })[id];
   const row = document.createElement('div'); row.className = 'key-row';
   const key = document.createElement('input');
-  key.type = 'password'; key.autocomplete = 'new-password'; key.spellcheck = false; key.placeholder = item.connected ? tr('keyPlaceholder') : (language === 'ms' ? `Masukkan kunci ${providerInfo[id].name}` : `Enter ${providerInfo[id].name} API key`);
-  key.setAttribute('aria-label', language === 'ms' ? `Kunci API ${providerInfo[id].name}` : `${providerInfo[id].name} API key`);
+  key.type = 'password'; key.autocomplete = 'new-password'; key.spellcheck = false; key.placeholder = item.connected ? tr('keyPlaceholder') : tr('keyEnter')(providerInfo[id].name);
+  key.dataset.provider = id;
+  key.value = pendingKeys.get(id) || '';
+  key.setAttribute('aria-label', tr('keyAria')(providerInfo[id].name));
+  key.addEventListener('input', () => { if (key.value) pendingKeys.set(id, key.value); else pendingKeys.delete(id); });
   const save = document.createElement('button'); save.type = 'button'; save.textContent = tr('save');
   save.addEventListener('click', async () => {
     if (!key.value.trim()) return toast(tr('keySaved'));
@@ -267,9 +294,10 @@ function providerCard(id, item) {
     try {
       const response = await fetch(`/api/providers/${id}/key`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ key: key.value }) });
       const result = await response.json();
-      if (!response.ok) throw new Error(result.error || 'Kunci tidak dapat disimpan.');
+      if (!response.ok) throw new Error(result.error || tr('keySaveFailed'));
       key.value = '';
-      toast(language === 'ms' ? `${providerInfo[id].name} disambung untuk sesi server ini.` : `${providerInfo[id].name} connected for this server session.`);
+      pendingKeys.delete(id);
+      toast(tr('keySavedNotice')(providerInfo[id].name));
       await refreshConnections();
     } catch (error) { toast(error.message); }
     finally { save.disabled = false; }
@@ -280,9 +308,9 @@ function providerCard(id, item) {
     try {
       const response = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ provider: id, messages: [{ role: 'user', content: 'Reply with exactly: Connection successful.' }] }) });
       const result = await response.json();
-      if (!response.ok) throw new Error(result.error || 'Ujian API gagal.');
-      toast(language === 'ms' ? `${providerInfo[id].name}: API berjaya menjawab.` : `${providerInfo[id].name}: API responded successfully.`);
-    } catch (error) { toast(`Ujian gagal: ${error.message}`); }
+      if (!response.ok) throw new Error(result.error || tr('requestFailed'));
+      toast(tr('testOk')(providerInfo[id].name));
+    } catch (error) { toast(tr('testFailed')(error.message)); }
     finally { test.textContent = tr('testApi'); test.disabled = !providersState.get(id)?.connected; }
   });
   const clear = document.createElement('button'); clear.type = 'button'; clear.className = 'clear-key'; clear.textContent = tr('disconnect'); clear.disabled = !item.connected || item.keySource === 'environment';
@@ -291,7 +319,7 @@ function providerCard(id, item) {
     : (item.keySource === 'environment' ? 'Remove the environment variable to disconnect.' : 'Remove the key from server memory.');
   clear.addEventListener('click', async () => {
     await fetch(`/api/providers/${id}/key`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ key: '' }) });
-    await refreshConnections(); toast(language === 'ms' ? 'Kunci sesi diputuskan.' : 'Session key disconnected.');
+    await refreshConnections(); toast(tr('keyDisconnectedNotice'));
   });
   row.append(key, save, test, clear);
   const foot = document.createElement('div'); foot.className = 'key-foot'; foot.textContent = tr('keyFoot');
@@ -311,9 +339,7 @@ function localAgentCard(id, item) {
   const state = document.createElement('span'); state.className = `provider-state${item.installed ? ' connected' : ''}`; state.textContent = item.installed ? tr('cliReady') : tr('cliMissing');
   head.append(logo, title, state);
   const desc = document.createElement('p');
-  desc.textContent = item.installed
-    ? (language === 'ms' ? 'Boleh dipilih untuk chat atau panel kolaborasi. CLI berjalan pada projek semasa dengan mod baca/rancang.' : 'Available for chat or the collaboration panel. The CLI runs in the current project in read-only or plan mode.')
-    : (language === 'ms' ? `Pasang dan log masuk ke ${agentInfo[id].name} dalam Termux. Kemudian tekan Semak semula sambungan.` : `Install and sign in to ${agentInfo[id].name} in Termux, then refresh the connection check.`);
+  desc.textContent = item.installed ? tr('agentReadyDesc') : tr('agentMissingDesc')(agentInfo[id].name);
   card.append(head, desc);
   return card;
 }
@@ -324,20 +350,37 @@ function renderSettings() {
   for (const [id, item] of agentsState) panel.append(localAgentCard(id, item));
 }
 
+function updateCollabButton() {
+  const checked = [...collabSelection].filter(id => selectedAvailable(id)).length;
+  $('#collab-button').disabled = checked < 2;
+}
+
 function renderCollabOptions() {
-  const box = $('#collab-agents'); box.replaceChildren();
+  const box = $('#collab-agents');
+  const checked = new Set([...box.querySelectorAll('input:checked')].map(node => node.value));
+  if (!checked.size && !collabSelection.size) {
+    const first = Object.keys(providerInfo).find(id => selectedAvailable(id)) || Object.keys(agentInfo).find(id => selectedAvailable(id));
+    if (first) checked.add(first);
+  }
+  box.replaceChildren();
   const all = [...Object.keys(providerInfo).map(id => ({ id, name: providerInfo[id].name })), ...Object.keys(agentInfo).map(id => ({ id, name: agentInfo[id].name }))];
   for (const item of all) {
     const enabled = selectedAvailable(item.id);
     const label = document.createElement('label'); label.className = `collab-chip${enabled ? '' : ' unavailable'}`;
     const check = document.createElement('input'); check.type = 'checkbox'; check.value = item.id; check.disabled = !enabled;
-    if (enabled && !box.querySelector('input:checked')) check.checked = true;
+    check.checked = enabled && checked.has(item.id);
+    check.addEventListener('change', () => {
+      if (check.checked) collabSelection.add(item.id); else collabSelection.delete(item.id);
+      updateCollabButton();
+    });
     const name = document.createElement('span'); name.textContent = item.name;
     label.append(check, name); box.append(label);
   }
+  collabSelection.clear();
+  for (const id of checked) if (selectedAvailable(id)) collabSelection.add(id);
   const available = all.filter(item => selectedAvailable(item.id)).length;
   $('#collab-caption').textContent = available >= 2 ? tr('collabAvailable')(available) : tr('collabNeedMore');
-  $('#collab-button').disabled = available < 2;
+  updateCollabButton();
 }
 
 async function refreshConnections() {
@@ -352,7 +395,7 @@ async function refreshConnections() {
     for (const id of Object.keys(agentInfo)) {
       const state = agentsState.get(id)?.installed;
       $(`#${id}-mini-dot`).classList.toggle('ready', Boolean(state));
-      $(`#${id}-mini-state`).textContent = state ? (language === 'ms' ? 'Tersedia' : 'Available') : tr('cliMissing');
+      $(`#${id}-mini-state`).textContent = state ? tr('availableShort') : tr('cliMissing');
     }
     renderCollabOptions(); renderSettings(); updateSelectedProvider();
   } catch { toast(language === 'ms' ? 'Tidak dapat memeriksa ejen. Pastikan server masih berjalan.' : 'Could not check agents. Make sure the server is running.'); }
@@ -363,18 +406,28 @@ async function refreshStatus() {
     const response = await fetch('/api/status');
     const status = await response.json();
     if (!response.ok) throw new Error('Status gagal');
-    $('#local-badge').textContent = language === 'ms' ? 'Sedia' : 'Ready'; $('#local-detail').textContent = status.cwd;
+    $('#local-badge').textContent = tr('localReady'); $('#local-detail').textContent = status.cwd;
+    $('#device-label').textContent = tr('deviceLabel');
     $('#terminal-device-status').textContent = tr('terminalConnected'); $('#terminal-cwd').textContent = status.cwd;
+    $('#terminal-ready-label').textContent = tr('ready');
+    $('#device-live-dot').classList.remove('offline');
     $('#footer-node').textContent = status.node.replace(/^v/, '');
   } catch {
-    $('#local-badge').textContent = language === 'ms' ? 'Terputus' : 'Offline'; $('#local-detail').textContent = tr('startServer');
-    $('#terminal-device-status').textContent = language === 'ms' ? 'Terputus' : 'Disconnected'; $('#terminal-cwd').textContent = tr('serverOffline');
+    $('#local-badge').textContent = tr('localOffline'); $('#local-detail').textContent = tr('startServer');
+    $('#device-label').textContent = tr('deviceOffline');
+    $('#terminal-device-status').textContent = tr('localOffline'); $('#terminal-cwd').textContent = tr('serverOffline');
+    $('#terminal-ready-label').textContent = tr('terminalOffline');
+    $('#device-live-dot').classList.add('offline');
   }
 }
 
 function switchView(view) {
   for (const name of ['chat', 'terminal', 'tools']) $(`#${name}-view`).classList.toggle('active', view === name);
-  document.querySelectorAll('.nav-link[data-view]').forEach(button => button.classList.toggle('active', button.dataset.view === view));
+  document.querySelectorAll('.nav-link[data-view]').forEach(button => {
+    const active = button.dataset.view === view;
+    button.classList.toggle('active', active);
+    if (active) button.setAttribute('aria-current', 'page'); else button.removeAttribute('aria-current');
+  });
   $('#crumb-title').textContent = tr(view === 'terminal' ? 'terminalView' : view === 'tools' ? 'toolsView' : 'chatView');
   if (view === 'tools') refreshTools();
 }
@@ -385,7 +438,7 @@ async function refreshTools() {
   box.replaceChildren();
   const loading = document.createElement('p');
   loading.className = 'tools-loading';
-  loading.textContent = language === 'ms' ? 'Memeriksa alat lokal…' : 'Checking local tools…';
+  loading.textContent = tr('toolsChecking');
   box.append(loading);
   try {
     const response = await fetch('/api/tools');
@@ -434,69 +487,80 @@ async function refreshTools() {
   } catch (error) {
     box.replaceChildren();
     const message = document.createElement('p'); message.className = 'tools-loading';
-    message.textContent = language === 'ms' ? `Pemeriksaan alat gagal: ${error.message}` : `Could not check tools: ${error.message}`;
+    message.textContent = tr('toolsFailed')(error.message);
     box.append(message);
   }
 }
 
-function openSettings() { $('#settings-modal').hidden = false; }
-function closeSettings() { $('#settings-modal').hidden = true; }
+function openSettings() {
+  lastFocused = document.activeElement;
+  $('#settings-modal').hidden = false;
+  $('#close-settings').focus();
+}
+
+function closeSettings() {
+  $('#settings-modal').hidden = true;
+  if (lastFocused && lastFocused.isConnected) lastFocused.focus();
+}
 
 async function collaborate() {
   if (busy) return;
   const prompt = input.value.trim();
-  if (!prompt) return toast(language === 'ms' ? 'Tulis soalan atau tugasan untuk panel AI dahulu.' : 'Write a question or task for the AI panel first.');
-  const participants = [...$('#collab-agents').querySelectorAll('input:checked')].map(input => input.value);
-  if (participants.length < 2) return toast(language === 'ms' ? 'Pilih sekurang-kurangnya dua ejen yang tersedia.' : 'Select at least two available agents.');
+  if (!prompt) return toast(tr('collabPromptNeeded'));
+  const participants = [...$('#collab-agents').querySelectorAll('input:checked')].map(node => node.value);
+  if (participants.length < 2) return toast(tr('collabSelectTwo'));
   const selected = $('#provider-select').value;
   const lead = participants.includes(selected) ? selected : participants[0];
   busy = true; $('#collab-button').disabled = true; sendButton.disabled = true;
   const next = [...history, { role: 'user', content: prompt }].slice(-16);
-  renderMessage('user', `✦ ${language === 'ms' ? 'Panel kolaborasi' : 'Collaboration panel'} (${participants.map(selectedLabel).join(', ')}):\n${prompt}`);
+  renderMessage('user', `✦ ${tr('collabTitle')} (${participants.map(selectedLabel).join(', ')}):\n${prompt}`);
   input.value = '';
   renderPending(tr('panelPending')(participants.length));
   try {
-    const response = await fetch('/api/collaborate', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ participants, lead, messages: next }) });
+    const response = await fetch('/api/collaborate', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ participants, lead, mode: workMode, messages: next }) });
     const result = await response.json();
     $('#pending-message')?.remove();
-    if (!response.ok) throw new Error(result.error || (language === 'ms' ? 'Kolaborasi gagal.' : 'Collaboration failed.'));
+    if (!response.ok) throw new Error(result.error || tr('collabFailed'));
     for (const item of result.results || []) {
-      if (item.reply) renderMessage('assistant', item.reply, `${item.name} · pandangan panel`);
-      else renderMessage('assistant', `${language === 'ms' ? 'Tidak dapat menjawab' : 'Could not respond'}: ${item.error}`, `${item.name} · ${language === 'ms' ? 'ralat' : 'error'}`);
+      if (item.reply) renderMessage('assistant', item.reply, `${item.name} · ${tr('panelView')}`);
+      else renderMessage('assistant', `${tr('couldNotRespond')}: ${item.error}`, `${item.name} · ${tr('panelError')}`);
     }
-    renderMessage('assistant', result.summary, `${selectedLabel(result.lead)} · sintesis kolaborasi`);
+    renderMessage('assistant', result.summary, `${selectedLabel(result.lead)} · ${tr('panelSynthesis')}`);
     history.push({ role: 'user', content: prompt }, { role: 'assistant', content: result.summary });
     toast(tr('resultReady'));
   } catch (error) {
     $('#pending-message')?.remove();
-    renderMessage('assistant', `Ralat kolaborasi: ${error.message}`, 'ruangAI');
+    renderMessage('assistant', `${tr('collabErrorPrefix')}: ${error.message}`, 'Ghost Platform');
     messages.lastElementChild?.classList.add('message-error');
-  } finally { busy = false; $('#collab-button').disabled = false; sendButton.disabled = false; updateSelectedProvider(); }
+  } finally { busy = false; sendButton.disabled = false; updateCollabButton(); updateSelectedProvider(); }
 }
 
 async function executeTermuxCommand(command, askFirst = false) {
-  if (!command || busy) return;
+  if (!command || busy || commandBusy) return;
   $('#command').value = command;
   switchView('terminal');
   if (askFirst && !window.confirm(`${tr('commandConfirm')}\n\n${command}`)) return;
-  $('#run-button').disabled = true; $('#run-button').innerHTML = `<span>…</span> ${tr('run')}`;
+  commandBusy = true;
+  $('#run-button').disabled = true;
+  $('#run-label').textContent = `… ${tr('run')}`;
   $('#output').textContent = `$ ${command}\n\n${tr('run')}…`;
-  $('#last-run').textContent = `${language === 'ms' ? 'Dihantar' : 'Sent'} ${new Date().toLocaleTimeString()}`;
+  $('#last-run').textContent = `${tr('sentAt')} ${new Date().toLocaleTimeString()}`;
+  $('#last-run').dataset.ran = 'true';
   try {
     const response = await fetch('/api/command', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ command }) });
     const result = await response.json();
-    if (!response.ok) throw new Error(result.error || (language === 'ms' ? 'Arahan gagal dihantar.' : 'Command could not be sent.'));
-    const commandOutput = result.output || (result.ok ? (language === 'ms' ? '(Tiada output)' : '(No output)') : (language === 'ms' ? 'Arahan gagal.' : 'Command failed.'));
-    $('#output').textContent = `$ ${command}\n\n${commandOutput}${result.timedOut ? '\n\n[Masa arahan tamat selepas 30 saat]' : ''}`;
-    history.push({ role: 'user', content: `Hasil Termux untuk arahan \`${command}\` (exit ${result.code}):\n${commandOutput}` });
+    if (!response.ok) throw new Error(result.error || tr('commandSendFailed'));
+    const commandOutput = result.output || (result.ok ? tr('noOutput') : tr('commandFailedText'));
+    $('#output').textContent = `$ ${command}\n\n${commandOutput}${result.timedOut ? tr('timedOut') : ''}`;
+    history.push({ role: 'user', content: `Termux output for \`${command}\` (exit ${result.code}):\n${commandOutput.slice(0, 4000)}` });
     updateSelectedProvider();
     toast(tr('resultInContext'));
     return result;
   } catch (error) {
-    $('#output').textContent = `$ ${command}\n\nRalat: ${error.message}`;
+    $('#output').textContent = `$ ${command}\n\n${tr('errorPrefix')}: ${error.message}`;
     toast(error.message);
     return null;
-  } finally { $('#run-button').disabled = false; $('#run-button').innerHTML = `<span>▶</span> <span id="run-label">${tr('run')}</span>`; }
+  } finally { commandBusy = false; $('#run-button').disabled = false; $('#run-label').textContent = tr('run'); }
 }
 
 document.querySelectorAll('.nav-link[data-view]').forEach(button => button.addEventListener('click', () => switchView(button.dataset.view)));
@@ -508,13 +572,13 @@ $('#close-settings').addEventListener('click', closeSettings);
 $('#done-settings').addEventListener('click', closeSettings);
 $('#settings-modal').addEventListener('click', event => { if (event.target === $('#settings-modal')) closeSettings(); });
 $('#theme-select').addEventListener('change', event => {
-  theme = event.target.value;
-  localStorage.setItem('ghost-theme', theme);
+  theme = ['black', 'blue', 'hacker'].includes(event.target.value) ? event.target.value : 'black';
+  writeSetting('ghost-theme', theme);
   applyPreferences();
 });
 $('#language-select').addEventListener('change', event => {
-  language = event.target.value;
-  localStorage.setItem('ghost-language', language);
+  language = ['ms', 'en'].includes(event.target.value) ? event.target.value : 'ms';
+  writeSetting('ghost-language', language);
   applyPreferences();
   refreshStatus();
   refreshConnections();
@@ -522,16 +586,37 @@ $('#language-select').addEventListener('change', event => {
 $('#provider-select').addEventListener('change', updateSelectedProvider);
 $('#refresh-tools').addEventListener('click', refreshTools);
 document.querySelectorAll('.mode-option').forEach(button => button.addEventListener('click', () => {
-  workMode = button.dataset.mode;
-  localStorage.setItem('ghost-mode', workMode);
+  workMode = ['chat', 'agent'].includes(button.dataset.mode) ? button.dataset.mode : 'chat';
+  writeSetting('ghost-mode', workMode);
   applyPreferences();
 }));
 $('#chat-form').addEventListener('submit', event => { event.preventDefault(); sendChat(); });
 $('#collab-button').addEventListener('click', collaborate);
 $('#chat-input').addEventListener('keydown', event => { if (event.key === 'Enter' && !event.shiftKey) { event.preventDefault(); sendChat(); } });
-document.querySelectorAll('.suggestions button').forEach(button => button.addEventListener('click', () => { input.value = button.dataset.prompt; sendChat(); }));
+document.querySelectorAll('.suggestions button').forEach(button => button.addEventListener('click', () => {
+  if (busy) return;
+  const prompt = language === 'ms' ? button.dataset.promptMs : button.dataset.promptEn;
+  input.value = prompt;
+  sendChat(prompt);
+}));
 $('#refresh-status').addEventListener('click', () => { refreshStatus(); refreshConnections(); });
-$('#clear-output').addEventListener('click', () => { $('#output').textContent = tr('waiting'); $('#last-run').textContent = tr('notRun'); });
+$('#clear-output').addEventListener('click', () => { delete $('#last-run').dataset.ran; $('#output').textContent = tr('waiting'); $('#last-run').textContent = tr('notRun'); });
+document.addEventListener('keydown', event => {
+  if ((event.metaKey || event.ctrlKey) && ['1', '2', '3'].includes(event.key)) {
+    event.preventDefault();
+    switchView({ 1: 'chat', 2: 'terminal', 3: 'tools' }[event.key]);
+    return;
+  }
+  if ($('#settings-modal').hidden) return;
+  if (event.key === 'Escape') { closeSettings(); return; }
+  if (event.key !== 'Tab') return;
+  const focusables = [...$('#settings-modal').querySelectorAll('button, select, input, a[href]')].filter(node => !node.disabled);
+  if (!focusables.length) return;
+  const first = focusables[0];
+  const last = focusables.at(-1);
+  if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+  else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+});
 $('#command-form').addEventListener('submit', async event => {
   event.preventDefault();
   const command = $('#command').value.trim();

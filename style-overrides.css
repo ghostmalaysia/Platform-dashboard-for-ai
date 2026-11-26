@@ -90,3 +90,15 @@ button,select,input,textarea{font-family:inherit}
 [data-theme="hacker"] .input-row{border-color:#28643b}
 @media(max-width:1050px){.collab-row{flex-wrap:wrap}.collab-caption{min-width:100%}.collab-agents{justify-content:flex-start}.collab-button{margin-left:auto}}
 @media(max-width:620px){.agent-mini,.free-mini{display:none}.core-label,.free-label{display:none}.mode-switch{gap:5px}.mode-option{min-width:0;flex:1;padding:7px 8px;gap:7px}.mode-option small{font-size:7px}.tools-page{padding:28px 11px}.tools-toolbar{align-items:flex-start;font-size:8px}.tool-card{padding:11px}.tool-card h2{font-size:11px}.tool-meta{font-size:7px}.collab-row{gap:6px;padding:7px}.collab-caption{max-width:none!important;min-width:100%}.collab-caption small{font-size:7px}.collab-agents{justify-content:flex-start;gap:3px}.collab-chip{font-size:7px;padding:0 4px}.collab-button{height:25px}.chat-layout{min-height:700px}}
+.skip-link{position:fixed;left:12px;top:-60px;z-index:100;padding:9px 12px;border-radius:7px;background:#c7ed89;color:#172012;font-size:11px;font-weight:700;text-decoration:none;transition:top .15s ease}
+.skip-link:focus{top:12px}
+.sidebar{overflow-y:auto;scrollbar-width:thin}
+:focus-visible{outline:2px solid #a6e870;outline-offset:2px}
+#chat-input:focus-visible,#command:focus-visible,.preference-control select:focus-visible{outline:2px solid #a6e870;outline-offset:0}
+[data-theme="blue"] :focus-visible{outline-color:#75b8f2}
+[data-theme="hacker"] :focus-visible{outline-color:#4dff82}
+.pulse-dot.offline{background:#cf7d6a;box-shadow:none}
+.code-block{white-space:pre-wrap;word-break:break-word;border:1px solid #30372e;border-radius:6px;background:#111510;padding:9px;font:10px/1.5 monospace;color:#c9d8bb}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+@media(max-height:600px){.chat-layout{min-height:0;height:calc(100vh - 74px)}.terminal-page,.tools-page{padding-top:16px;padding-bottom:16px}}
+@media(max-width:1050px){.collab-chip,.collab-caption small,.agent-mini small,.free-mini small,.key-foot,.chat-footnote{font-size:9px}}

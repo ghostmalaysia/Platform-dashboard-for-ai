@@ -24,7 +24,7 @@ This project targets **Web, Android and iOS**. Keep the shared dashboard and AI-
 
 ## F-Droid readiness
 
-The current repository is a Node.js dashboard, not an Android application, and has no root license file or Android build. Before proposing an Android client to F-Droid, Ghost Platform needs a FOSS project license, a source-built Android app with a unique application ID and versioning, F-Droid metadata/screenshots, and a build that uses acceptable open-source dependencies. The Android client must remain useful without proprietary Google services. Follow F-Droid's inclusion policy and submission review; inclusion is not automatic.
+The repository now contains both a Node.js dashboard and an early Android WebView companion in `android/`. The app already has a unique application ID (`com.ghostmalaysia.platform`), versioning, a conservative `INTERNET`-only permission set, and cleartext traffic restricted to `127.0.0.1`. It still is **not F-Droid ready**: there is no root FOSS license file, no Gradle wrapper or verified source build, no F-Droid metadata/screenshots, no reproducible CI build, and no signing/release setup. Add those before submitting; the app must remain useful without proprietary Google services. Follow F-Droid's inclusion policy and submission review; inclusion is not automatic.
 
 ## Safety rule
 

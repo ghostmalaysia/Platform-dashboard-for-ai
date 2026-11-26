@@ -25,6 +25,12 @@ const localAgents = {
   codex: { name: 'Codex', command: 'codex', detail: 'Codex CLI · sesi ChatGPT atau kaedah log masuk Codex' },
   opencode: { name: 'OpenCode', command: 'opencode', detail: 'OpenCode CLI · model dan penyedia dikawal konfigurasi OpenCode' },
 };
+const MEMORY_SCHEMA = 1;
+const MEMORY_TABLE = 'ghost_memory';
+const MEMORY_LIMIT = 2000;
+const localMemory = new Map();
+const supabaseUrl = (process.env.SUPABASE_URL || '').replace(/\/+$/, '');
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_ANON_KEY || '';
 const toolsCatalog = [
   { id: 'cli-hub', name: 'CLI-Anything / CLI-Hub', command: 'cli-hub', github: 'https://github.com/HKUDS/CLI-Anything', license: 'Apache-2.0', install: 'pip install cli-anything-hub', needs: 'Python/pip; individual tools may need desktop software or extra dependencies', why: 'Discover, inspect and manage agent-ready CLI tools. Treat the hub as a catalog; install only the tools that suit Android/Termux.' },
   { id: 'termux-mcp', name: 'Termux-MCP', command: 'termux-mcp', github: 'https://github.com/termuxgpt/termux-mcp', license: 'AGPL-3.0', install: 'pip install termux-mcp', needs: 'Python/pip; separate local service, loopback-only by default', why: 'Adds structured Termux/device tools, streaming and risk gates. Community project; review its policies before connecting agents.' },
@@ -48,7 +54,7 @@ function send(res, status, body, type = 'application/json; charset=utf-8', extra
     'Referrer-Policy': 'no-referrer',
     'Cross-Origin-Resource-Policy': 'same-origin',
     'Vary': 'Origin',
-    'Content-Security-Policy': "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; base-uri 'none'; object-src 'none'; frame-ancestors 'none'",
+    'Content-Security-Policy': "default-src 'self' blob:; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; base-uri 'none'; object-src 'none'; frame-ancestors 'none'",
     ...extraHeaders,
   });
   res.end(type.startsWith('application/json') ? JSON.stringify(body) : body);
@@ -86,14 +92,14 @@ const pruneLimits = setInterval(() => {
 }, RATE_WINDOW);
 pruneLimits.unref();
 
-function readBody(req) {
+function readBody(req, maxBytes = MAX_BODY) {
   return new Promise((resolve, reject) => {
     let data = '';
     let tooLarge = false;
     req.on('data', chunk => {
       if (tooLarge) return;
       data += chunk;
-      if (Buffer.byteLength(data) > MAX_BODY) { tooLarge = true; data = ''; }
+      if (Buffer.byteLength(data) > maxBytes) { tooLarge = true; data = ''; }
     });
     req.on('end', () => {
       if (tooLarge) return reject(httpError(413, 'Permintaan terlalu panjang.'));
@@ -215,6 +221,76 @@ function safeError(error, secret) {
   return message.slice(0, 1200);
 }
 
+function memoryMode() {
+  return supabaseUrl && supabaseKey ? 'supabase' : 'local';
+}
+
+function validateDeviceId(value) {
+  if (typeof value !== 'string' || !/^[A-Za-z0-9_-]{1,64}$/.test(value)) throw httpError(400, 'ID peranti tidak sah.');
+  return value;
+}
+
+function normalizeMemoryEntry(entry) {
+  if (!entry || typeof entry !== 'object' || Array.isArray(entry)) throw httpError(400, 'Rekod memori tidak sah.');
+  const validId = typeof entry.id === 'string' && /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(entry.id);
+  const id = validId ? entry.id : crypto.randomUUID();
+  if (!['user', 'assistant'].includes(entry.role) || typeof entry.content !== 'string' || !entry.content.length || entry.content.length > 8000) throw httpError(400, 'Kandungan memori tidak sah atau terlalu panjang.');
+  let metadata = {};
+  if (entry.metadata != null) {
+    if (typeof entry.metadata !== 'object' || Array.isArray(entry.metadata)) throw httpError(400, 'Metadata memori tidak sah.');
+    metadata = entry.metadata;
+    if (JSON.stringify(metadata).length > 2000) throw httpError(400, 'Metadata memori terlalu panjang.');
+  }
+  const parsed = Date.parse(entry.created_at);
+  const createdAt = typeof entry.created_at === 'string' && Number.isFinite(parsed) ? new Date(parsed).toISOString() : new Date().toISOString();
+  return { id, role: entry.role, content: entry.content, metadata, created_at: createdAt, schema_version: MEMORY_SCHEMA };
+}
+
+function dedupeMemory(entries) {
+  const byId = new Map();
+  for (const entry of entries) byId.set(entry.id, entry);
+  return [...byId.values()].sort((a, b) => Date.parse(a.created_at) - Date.parse(b.created_at));
+}
+
+async function supabaseFetch(target, options = {}) {
+  const response = await fetch(`${supabaseUrl}/rest/v1/${target}`, {
+    ...options,
+    signal: AbortSignal.timeout(20_000),
+    headers: {
+      apikey: supabaseKey,
+      Authorization: `Bearer ${supabaseKey}`,
+      Accept: 'application/json',
+      ...(options.headers || {}),
+    },
+  });
+  const text = await response.text();
+  let data = null;
+  if (text) { try { data = JSON.parse(text); } catch { data = text; } }
+  if (!response.ok) throw new Error((data && data.message) || `Supabase membalas status ${response.status}.`);
+  return data;
+}
+
+async function readMemory(deviceId, limit = MEMORY_LIMIT) {
+  if (memoryMode() === 'local') return (localMemory.get(deviceId) || []).slice(-limit);
+  const target = `${MEMORY_TABLE}?device_id=eq.${encodeURIComponent(deviceId)}&select=id,role,content,metadata,created_at,schema_version&order=created_at.asc&limit=${limit}`;
+  const rows = await supabaseFetch(target);
+  return Array.isArray(rows) ? rows.map(normalizeMemoryEntry) : [];
+}
+
+async function writeMemory(deviceId, entries, replace = false) {
+  if (memoryMode() === 'local') {
+    const current = replace ? [] : (localMemory.get(deviceId) || []);
+    const merged = dedupeMemory([...current, ...entries]).slice(-MEMORY_LIMIT);
+    localMemory.set(deviceId, merged);
+    return merged.length;
+  }
+  if (replace) await supabaseFetch(`${MEMORY_TABLE}?device_id=eq.${encodeURIComponent(deviceId)}`, { method: 'DELETE', headers: { Prefer: 'return=minimal' } });
+  if (!entries.length) return 0;
+  const rows = entries.map(entry => ({ ...entry, device_id: deviceId }));
+  await supabaseFetch(MEMORY_TABLE, { method: 'POST', headers: { 'Content-Type': 'application/json', Prefer: 'resolution=merge-duplicates,return=minimal' }, body: JSON.stringify(rows) });
+  return entries.length;
+}
+
 function serveFile(res, file, type) {
   try { return send(res, 200, fs.readFileSync(path.join(ROOT, file), 'utf8'), type); }
   catch { return send(res, 500, { error: 'Fail antara muka tidak tersedia.' }); }
@@ -224,7 +300,7 @@ const server = http.createServer(async (req, res) => {
   try {
     const url = new URL(req.url, ORIGIN);
     if (!allowedRequest(req)) return send(res, 403, { error: 'Permintaan tidak dibenarkan.' });
-    const limits = { '/api/chat': 30, '/api/collaborate': 10, '/api/command': 20 };
+    const limits = { '/api/chat': 30, '/api/collaborate': 10, '/api/command': 20, '/api/memory': 60, '/api/memory/status': 60, '/api/memory/export': 10, '/api/memory/import': 10 };
     const max = req.method === 'POST' ? (limits[url.pathname] || 40) : (['/api/agents', '/api/tools'].includes(url.pathname) ? 60 : 180);
     const retry = limitRequest(req, url.pathname, max);
     if (retry) return send(res, 429, { error: 'Terlalu banyak permintaan. Cuba semula sebentar lagi.' }, 'application/json; charset=utf-8', { 'Retry-After': String(retry) });
@@ -305,13 +381,48 @@ const server = http.createServer(async (req, res) => {
       });
       return;
     }
+    if (req.method === 'GET' && url.pathname === '/api/memory/status') return send(res, 200, { mode: memoryMode(), connected: memoryMode() === 'supabase', schema: MEMORY_SCHEMA });
+    if (req.method === 'GET' && url.pathname === '/api/memory') {
+      const deviceId = validateDeviceId(url.searchParams.get('device'));
+      const requested = Number(url.searchParams.get('limit'));
+      const limit = Number.isInteger(requested) ? Math.min(MEMORY_LIMIT, Math.max(1, requested)) : 200;
+      const entries = await readMemory(deviceId, limit);
+      return send(res, 200, { schema: MEMORY_SCHEMA, mode: memoryMode(), deviceId, entries });
+    }
+    if (req.method === 'POST' && url.pathname === '/api/memory') {
+      const request = await readBody(req);
+      const deviceId = validateDeviceId(request.deviceId);
+      if (!Array.isArray(request.entries) || request.entries.length > 200) throw httpError(400, 'Maksimum 200 rekod bagi setiap hantaran.');
+      const entries = request.entries.map(normalizeMemoryEntry);
+      const saved = await writeMemory(deviceId, entries, false);
+      return send(res, 200, { ok: true, saved, received: entries.length, mode: memoryMode() });
+    }
+    if (req.method === 'POST' && url.pathname === '/api/memory/export') {
+      const request = await readBody(req, 2 * 1024 * 1024);
+      const deviceId = validateDeviceId(request.deviceId);
+      const incoming = Array.isArray(request.entries) ? request.entries.slice(0, MEMORY_LIMIT).map(normalizeMemoryEntry) : [];
+      const stored = await readMemory(deviceId, MEMORY_LIMIT);
+      return send(res, 200, { app: 'ghost-platform', schema: MEMORY_SCHEMA, exportedAt: new Date().toISOString(), deviceId, entries: dedupeMemory([...stored, ...incoming]) });
+    }
+    if (req.method === 'POST' && url.pathname === '/api/memory/import') {
+      const request = await readBody(req, 2 * 1024 * 1024);
+      const bundle = request.bundle;
+      if (!bundle || typeof bundle !== 'object' || bundle.app !== 'ghost-platform') throw httpError(400, 'Format bundle tidak dikenali.');
+      if (!Number.isInteger(bundle.schema) || bundle.schema < 1 || bundle.schema > MEMORY_SCHEMA) throw httpError(400, 'Versi bundle tidak disokong.');
+      const deviceId = validateDeviceId(request.deviceId || bundle.deviceId);
+      if (!Array.isArray(bundle.entries) || bundle.entries.length > MEMORY_LIMIT) throw httpError(400, 'Bundle mengandungi terlalu banyak rekod.');
+      const entries = bundle.entries.map(normalizeMemoryEntry);
+      const replace = request.mode === 'replace';
+      await writeMemory(deviceId, entries, replace);
+      return send(res, 200, { ok: true, imported: entries.length, replaced: replace, mode: memoryMode() });
+    }
     if (['GET', 'HEAD'].includes(req.method) && (url.pathname === '/' || url.pathname === '/index.html')) return serveFile(res, 'index.html', 'text/html; charset=utf-8');
     if (['GET', 'HEAD'].includes(req.method) && url.pathname === '/style.css') return serveFile(res, 'style.css', 'text/css; charset=utf-8');
     if (['GET', 'HEAD'].includes(req.method) && url.pathname === '/style-overrides.css') return serveFile(res, 'style-overrides.css', 'text/css; charset=utf-8');
     if (['GET', 'HEAD'].includes(req.method) && url.pathname === '/app.js') return serveFile(res, 'app.js', 'text/javascript; charset=utf-8');
     return send(res, 404, { error: 'Halaman tidak ditemui.' });
   } catch (error) {
-    return send(res, error.status || 502, { error: safeError(error) });
+    return send(res, error.status || 502, { error: safeError(error, supabaseKey || undefined) });
   }
 });
 
@@ -327,4 +438,5 @@ server.on('error', error => {
 server.listen(PORT, HOST, () => {
   console.log(`Ghost Platform: http://${HOST}:${PORT}`);
   console.log(`Direktori kerja arahan: ${process.cwd()}`);
+  console.log(`Memori: ${memoryMode() === 'supabase' ? 'Supabase' : 'lokal (localStorage)'}`);
 });

@@ -47,6 +47,8 @@ button,select,input,textarea{font-family:inherit}
 .preference-control{display:flex;flex-direction:column;gap:5px;color:#899384;font-size:8px}
 .preference-control select{height:31px;border:1px solid #343c31;border-radius:5px;background:#121610;padding:0 8px;color:#e0e5dc;font-size:9px;outline:0}
 .preference-control select:focus{border-color:#778d5b}
+.memory-card{border:1px solid #30372e;border-radius:8px;background:#1c211a;padding:12px;margin:0 0 11px}.memory-head{display:flex;align-items:center;gap:9px}.memory-head b{font-size:10px;font-weight:600;color:#e0e5dc}.memory-status{margin-left:auto;padding:3px 7px;border:1px solid #3a5131;border-radius:11px;color:#a9d77c;font-size:8px}.memory-status.cloud{border-color:#4b5d7a;color:#a9cdf5}.memory-card p{margin:7px 0 0;color:#899384;font-size:8px;line-height:1.5}.memory-actions{display:flex;gap:7px;margin-top:10px}.memory-actions .secondary-button{font-size:8px;padding:6px 9px}
+[data-theme="blue"] .memory-card{background:#111d2f;border-color:#2a3e58}[data-theme="hacker"] .memory-card{background:#07120a;border-color:#1c4329}
 [data-theme="blue"] body,[data-theme="blue"] .main-area{background:#0b1220;color:#e5edf8}
 [data-theme="blue"] .sidebar{background:#0d1727;border-color:#223149}
 [data-theme="blue"] .topbar,[data-theme="blue"] .app-footer,[data-theme="blue"] .profile{border-color:#223149}

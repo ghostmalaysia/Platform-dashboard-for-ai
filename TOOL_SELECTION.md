@@ -13,7 +13,7 @@ This project targets **Web, Android and iOS**. Keep the shared dashboard and AI-
 
 ## Not selected for the phone build
 
-- AgentMemory and similar hosted/self-hosted memory servers are useful references for future per-customer memory, but server/container and database requirements make them a poor fit for direct installation into the current Termux dashboard. Supabase remains the intended cloud-account option once a project is configured.
+- AgentMemory and similar hosted/self-hosted memory servers are useful references for future per-customer memory, but server/container and database requirements make them a poor fit for direct installation into the current Termux dashboard. Supabase is now an optional memory backend behind the local adapter; full per-customer accounts are still not connected.
 - Desktop-focused CLI-Anything harnesses should be shown as incompatible unless their underlying program and dependencies are available on Android.
 
 ## Platform boundaries

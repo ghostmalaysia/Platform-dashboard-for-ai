@@ -48,8 +48,29 @@ Kunci yang ditaip dalam dashboard disimpan dalam memori server sahaja dan hilang
 
 Pilih sekurang-kurangnya dua ejen yang tersedia, kemudian tekan **Kerjasama AI**. Pilihan ejen kekal semasa menukar tema, bahasa atau mod. Ejen menjawab tugasan yang sama; ejen utama membaca jawapan tersebut dan menghasilkan sintesis. Mod Chat/AI Agent turut digunakan oleh panel ini. Setiap respons API menggunakan kuota penyedia.
 
+## Memori & pemindahan
+
+Perbualan disimpan dalam `localStorage` peranti (`ghost-history`) dan disegerakkan ke server lokal. Jika `SUPABASE_URL` dan `SUPABASE_SERVICE_ROLE_KEY` (atau `SUPABASE_ANON_KEY` dengan RLS yang betul) disediakan sebelum `node server.js`, memori disimpan dalam jadual `ghost_memory` di Supabase; sebaliknya ia kekal lokal. Kunci itu tidak dihantar ke pelayar atau APK.
+
+Buat jadual ini dalam Supabase SQL Editor:
+
+```sql
+create table if not exists public.ghost_memory (
+  id uuid primary key,
+  device_id text not null,
+  role text not null check (role in ('user', 'assistant')),
+  content text not null,
+  metadata jsonb not null default '{}'::jsonb,
+  created_at timestamptz not null default now(),
+  schema_version integer not null default 1
+);
+create index if not exists ghost_memory_device_created_idx on public.ghost_memory (device_id, created_at);
+```
+
+Guna **Penyedia AI → Memori & pemindahan** untuk **Segerak**, **Eksport** (JSON), atau **Import** (gabung/ganti). Bundle eksport mengandungi `app`, `schema`, `exportedAt`, `deviceId` dan `entries`; tiada API key. Endpoint yang tersedia: `GET /api/memory`, `POST /api/memory`, `POST /api/memory/export`, `POST /api/memory/import`. Bila server baru tersedia, eksport dari sini dan import ke server itu menggunakan adapter yang sama. Projek Supabase free berhenti selepas 1 minggu tanpa aktiviti.
+
 ## Termux lokal
 
 Server hanya bind pada `127.0.0.1`, menyekat `Host`/`Origin` bukan tempatan, memerlukan JSON untuk `POST`, menambah header keselamatan (termasuk CSP), dan mengehad kadar permintaan setiap laluan dalam ingatan. Arahan daripada AI boleh dipindahkan ke terminal untuk disemak, atau **Jalankan dengan izin** akan meminta pengesahan sebelum menjalankan arahan. Output Termux dipendekkan kepada 4,000 aksara sebelum dimasukkan ke konteks chat untuk giliran seterusnya; ia tetap dihantar kepada penyedia cloud yang dipilih, jadi semak output sebelum bertanya semula. Arahan berjalan sebagai pengguna Termux yang menjalankan server, dengan akses yang sama kepada fail dan program pengguna itu. Jangan dedahkan server ke LAN atau internet.
 
-Pendaftaran pelanggan, memori awan dan penyegerakan Supabase belum disambungkan dalam build ini. Jangan anggap akaun atau perbualan telah disimpan ke awan.
+Pendaftaran pelanggan belum disambungkan dalam build ini. Memori boleh disegerakkan ke Supabase apabila pemboleh ubah persekitaran disediakan; tanpa itu, perbualan hanya kekal pada peranti dan dalam memori server semasa. Jangan anggap akaun pengguna telah wujud.

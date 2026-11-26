@@ -14,7 +14,7 @@ const localeMessages = {
     chatTitle: 'Ruang untuk berfikir.', chatSubtitle: 'Pilih model, berbual, dan bawa arahan ke Termux bila awak bersedia.', manageConnections: 'Sambungan', providerInfo: 'Butiran & privasi', welcomeKicker: 'GHOST PLATFORM · RUANG AI', welcomeTitle: 'Hai! Apa yang kita bina hari ini?', welcomeText: 'Tanya soalan, minta bantuan kod, atau minta arahan Termux. Semak arahan sebelum menjalankannya.',
     suggestionProject: 'Fahami projek ini', suggestionStorage: 'Semak storan Termux', suggestionPlan: 'Rancang sambungan AI', enterHint: 'Enter untuk hantar', chatPlaceholder: 'Tulis mesej kepada AI…', send: 'Hantar', chatFootnote: 'Jangan hantar kata laluan atau data sulit. Model percuma mungkin mempunyai had penggunaan.',
     collabTitle: 'Panel kolaborasi', collabCaption: 'Pilih sekurang-kurangnya 2 ejen untuk banding dan satukan jawapan.', collabButton: 'Kerjasama AI', terminalTitle: 'Terminal lokal', terminalSubtitle: 'Arahan dijalankan pada Termux di telefon ini. Semak arahan sebelum menjalankannya.', deviceLabel: 'PERANTI BERSAMBUNG', local: 'LOKAL', ready: 'sedia', commandLabel: 'ARAHAN YANG AKAN DIJALANKAN', commandPlaceholder: 'Contoh: pwd && ls -la', run: 'Jalankan', output: 'OUTPUT', clear: 'Kosongkan', waiting: 'Menunggu arahan…', terminalFoot: '⚠ Berjalan sebagai pengguna Termux semasa.', notRun: 'Belum ada arahan', terminalNoteTitle: 'Arahan daripada AI perlu disemak', terminalNoteText: 'Arahan AI hanya berjalan selepas awak beri izin.', footer: 'Dashboard lokal untuk Termux',
-    settingsEyebrow: 'TETAPAN', settingsTitle: 'Penyedia & ejen', settingsSubtitle: 'Codex dan OpenCode berjalan melalui CLI lokal. API cloud menggunakan kunci yang awak sediakan.', appearance: 'Penampilan', appearanceDescription: 'Pilih warna dan bahasa Ghost Platform.', themeLabel: 'Tema warna', languageLabel: 'Bahasa', themeBlack: 'Hitam', themeBlue: 'Biru gelap', themeHacker: 'Hijau hacker', languageMalay: 'Bahasa Melayu', languageEnglish: 'English', security: 'Kunci tidak dipaparkan semula atau disimpan ke fail; kunci yang ditaip di sini hanya kekal dalam memori sehingga server dihentikan. Google dan Groq boleh mengenakan bayaran jika projek/akaun bukan tier percuma.', modalFooter: 'Jawapan kolaborasi dihantar kepada ejen yang dipilih. Jangan masukkan data sulit ke API cloud.', done: 'Selesai',
+    settingsEyebrow: 'TETAPAN', settingsTitle: 'Penyedia & ejen', settingsSubtitle: 'Codex dan OpenCode berjalan melalui CLI lokal. API cloud menggunakan kunci yang awak sediakan.', appearance: 'Penampilan', appearanceDescription: 'Pilih warna dan bahasa Ghost Platform.', themeLabel: 'Tema warna', languageLabel: 'Bahasa', themeBlack: 'Hitam', themeBlue: 'Biru gelap', themeHacker: 'Hijau hacker', languageMalay: 'Bahasa Melayu', languageEnglish: 'English', security: 'Kunci tidak dipaparkan semula atau disimpan ke fail; kunci yang ditaip di sini hanya kekal dalam memori sehingga server dihentikan. Google dan Groq boleh mengenakan bayaran jika projek/akaun bukan tier percuma.', modalFooter: 'Jawapan kolaborasi dihantar kepada ejen yang dipilih. Jangan masukkan data sulit ke API cloud.', done: 'Selesai', memoryTitle: 'Memori & pemindahan', memoryDesc: 'Perbualan disimpan pada peranti. Bila Supabase disambung, data disegerakkan ke awan.', memoryLocal: 'Lokal', memoryCloud: 'Supabase', memorySync: 'Segerak', memoryExport: 'Eksport', memoryImport: 'Import', memorySyncing: 'Menyegerak…', memorySynced: 'Memori disegerakkan.', memoryExported: 'Fail memori dimuat turun.', memoryImported: 'Memori diimport.', memoryImportAsk: 'Gantikan semua memori untuk peranti ini? Pilih Batal untuk menggabungkan.', memoryFailed: n => `Memori gagal: ${n}`,
     modeChat: 'Chat', modeChatDescription: 'Bual dengan model yang dipilih', modeAgent: 'AI Agent', modeAgentDescription: 'Rancang tugasan dan tindakan Termux.', connected: 'Disambung', notConnected: 'Belum disambung', cliReady: 'CLI tersedia', cliMissing: 'CLI tidak ditemui', keySaved: 'Masukkan kunci dahulu.', keyPlaceholder: 'Kunci telah disambung (tidak dipaparkan)', save: 'Simpan', testApi: 'Uji API', testing: 'Menguji…', disconnect: 'Putuskan', keyFoot: 'Kunci dihantar kepada penyedia ini apabila awak berbual atau menekan Uji API.',
     collabAvailable: n => `${n} ejen sedia · pilih sekurang-kurangnya 2 untuk berbincang.`, collabNeedMore: 'Sambungkan sekurang-kurangnya 2 ejen untuk memulakan kolaborasi.', pending: name => `${name} sedang berfikir…`, panelPending: n => `Panel ${n} ejen`, resultReady: 'Panel AI selesai membandingkan jawapan.', resultInContext: 'Hasil Termux (dipendekkan) tersedia dalam konteks chat.', commandReview: 'Semak dalam Terminal →', commandRun: 'Jalankan dengan izin', commandMoved: 'Arahan dimasukkan untuk semakan. Belum dijalankan.', commandConfirm: 'Benarkan arahan ini berjalan sebagai pengguna Termux?', terminalConnected: 'Termux bersambung', serverOffline: 'Server lokal tidak menjawab', startServer: 'Mulakan semula node server.js',
     errorPrefix: 'Ralat', requestFailed: 'Permintaan gagal.', keySaveFailed: 'Kunci tidak dapat disimpan.', keySavedNotice: n => `${n} disambung untuk sesi server ini.`, keyDisconnectedNotice: 'Kunci sesi diputuskan.', testFailed: n => `Ujian gagal: ${n}`, testOk: n => `${n}: API berjaya menjawab.`, collabPromptNeeded: 'Tulis soalan atau tugasan untuk panel AI dahulu.', collabSelectTwo: 'Pilih sekurang-kurangnya dua ejen yang tersedia.', collabFailed: 'Kolaborasi gagal.', panelView: 'pandangan panel', panelSynthesis: 'sintesis kolaborasi', couldNotRespond: 'Tidak dapat menjawab', panelError: 'ralat', collabErrorPrefix: 'Ralat kolaborasi', commandSendFailed: 'Arahan gagal dihantar.', noOutput: '(Tiada output)', commandFailedText: 'Arahan gagal.', timedOut: '\n\n[Masa arahan tamat selepas 30 saat]', sentAt: 'Dihantar', historyMessages: n => `${n} mesej dalam sesi ini`, toolsChecking: 'Memeriksa alat lokal…', toolsFailed: n => `Pemeriksaan alat gagal: ${n}`, checkAgain: 'Semak semula sambungan.', availableShort: 'Tersedia', localReady: 'Sedia', localOffline: 'Terputus', deviceOffline: 'PERANTI TERPUTUS', terminalOffline: 'terputus', settingsAria: 'Tetapan penyedia', sendAria: 'Hantar mesej', closeAria: 'Tutup tetapan', skipLink: 'Langsung ke chat', agentReadyDesc: 'Boleh dipilih untuk chat atau panel kolaborasi. CLI berjalan pada projek semasa dengan mod baca/rancang.', agentMissingDesc: n => `Pasang dan log masuk ke ${n} dalam Termux. Kemudian tekan Semak semula sambungan.`, keyEnter: n => `Masukkan kunci ${n}`, keyAria: n => `Kunci API ${n}`,
@@ -25,7 +25,7 @@ const localeMessages = {
     chatTitle: 'A space to think.', chatSubtitle: 'Choose a model, chat, and send commands to Termux when you are ready.', manageConnections: 'Connections', providerInfo: 'Details & privacy', welcomeKicker: 'GHOST PLATFORM · AI WORKSPACE', welcomeTitle: 'Hi! What are we building today?', welcomeText: 'Ask a question, get coding help, or request a Termux command. Review commands before running them.',
     suggestionProject: 'Explore this project', suggestionStorage: 'Check Termux storage', suggestionPlan: 'Plan an AI setup', enterHint: 'Enter to send', chatPlaceholder: 'Message an AI…', send: 'Send', chatFootnote: 'Do not send passwords or sensitive data. Free models may have usage limits.',
     collabTitle: 'Collaboration panel', collabCaption: 'Choose at least 2 agents to compare and combine their answers.', collabButton: 'Collaborate', terminalTitle: 'Local terminal', terminalSubtitle: 'Commands run in Termux on this phone. Review commands before running them.', deviceLabel: 'DEVICE CONNECTED', local: 'LOCAL', ready: 'ready', commandLabel: 'COMMAND TO RUN', commandPlaceholder: 'Example: pwd && ls -la', run: 'Run', output: 'OUTPUT', clear: 'Clear', waiting: 'Waiting for a command…', terminalFoot: '⚠ Runs as the current Termux user.', notRun: 'No commands yet', terminalNoteTitle: 'Review AI commands', terminalNoteText: 'AI commands only run after you approve them.', footer: 'Local dashboard for Termux',
-    settingsEyebrow: 'SETTINGS', settingsTitle: 'Providers & agents', settingsSubtitle: 'Codex and OpenCode run through local CLIs. Cloud APIs use keys you provide.', appearance: 'Appearance', appearanceDescription: 'Choose Ghost Platform colors and language.', themeLabel: 'Color theme', languageLabel: 'Language', themeBlack: 'Black', themeBlue: 'Dark blue', themeHacker: 'Hacker green', languageMalay: 'Bahasa Melayu', languageEnglish: 'English', security: 'API keys are not shown again or written to a file. Keys entered here remain in server memory until the server stops. Google and Groq may charge if the project/account is not on a free tier.', modalFooter: 'Collaboration answers are sent to the selected agents. Do not send sensitive data to cloud APIs.', done: 'Done',
+    settingsEyebrow: 'SETTINGS', settingsTitle: 'Providers & agents', settingsSubtitle: 'Codex and OpenCode run through local CLIs. Cloud APIs use keys you provide.', appearance: 'Appearance', appearanceDescription: 'Choose Ghost Platform colors and language.', themeLabel: 'Color theme', languageLabel: 'Language', themeBlack: 'Black', themeBlue: 'Dark blue', themeHacker: 'Hacker green', languageMalay: 'Bahasa Melayu', languageEnglish: 'English', security: 'API keys are not shown again or written to a file. Keys entered here remain in server memory until the server stops. Google and Groq may charge if the project/account is not on a free tier.', modalFooter: 'Collaboration answers are sent to the selected agents. Do not send sensitive data to cloud APIs.', done: 'Done', memoryTitle: 'Memory & migration', memoryDesc: 'Chats stay on this device. When Supabase is connected, they are synced to the cloud.', memoryLocal: 'Local', memoryCloud: 'Supabase', memorySync: 'Sync', memoryExport: 'Export', memoryImport: 'Import', memorySyncing: 'Syncing…', memorySynced: 'Memory synced.', memoryExported: 'Memory file downloaded.', memoryImported: 'Memory imported.', memoryImportAsk: 'Replace all memory for this device? Cancel to merge instead.', memoryFailed: n => `Memory failed: ${n}`,
     modeChat: 'Chat', modeChatDescription: 'Talk to the selected model', modeAgent: 'AI Agent', modeAgentDescription: 'Plan tasks and Termux actions.', connected: 'Connected', notConnected: 'Not connected', cliReady: 'CLI available', cliMissing: 'CLI not found', keySaved: 'Enter a key first.', keyPlaceholder: 'Key connected (hidden)', save: 'Save', testApi: 'Test API', testing: 'Testing…', disconnect: 'Disconnect', keyFoot: 'This provider receives the key when you chat or press Test API.',
     collabAvailable: n => `${n} agents ready · select at least 2 to collaborate.`, collabNeedMore: 'Connect at least 2 agents to start collaborating.', pending: name => `${name} is thinking…`, panelPending: n => `${n}-agent panel`, resultReady: 'The AI panel has compared its answers.', resultInContext: 'Truncated Termux output is available in chat context.', commandReview: 'Review in Terminal →', commandRun: 'Run with approval', commandMoved: 'Command added for review. It has not run yet.', commandConfirm: 'Allow this command to run as the Termux user?', terminalConnected: 'Termux connected', serverOffline: 'Local server is not responding', startServer: 'Restart node server.js',
     errorPrefix: 'Error', requestFailed: 'Request failed.', keySaveFailed: 'The key could not be saved.', keySavedNotice: n => `${n} connected for this server session.`, keyDisconnectedNotice: 'Session key disconnected.', testFailed: n => `Test failed: ${n}`, testOk: n => `${n}: API responded successfully.`, collabPromptNeeded: 'Write a question or task for the AI panel first.', collabSelectTwo: 'Select at least two available agents.', collabFailed: 'Collaboration failed.', panelView: 'panel view', panelSynthesis: 'collaboration synthesis', couldNotRespond: 'Could not respond', panelError: 'error', collabErrorPrefix: 'Collaboration error', commandSendFailed: 'Command could not be sent.', noOutput: '(No output)', commandFailedText: 'Command failed.', timedOut: '\n\n[Command timed out after 30 seconds]', sentAt: 'Sent', historyMessages: n => `${n} messages in this session`, toolsChecking: 'Checking local tools…', toolsFailed: n => `Could not check tools: ${n}`, checkAgain: 'Refresh the connection check.', availableShort: 'Available', localReady: 'Ready', localOffline: 'Offline', deviceOffline: 'DEVICE OFFLINE', terminalOffline: 'offline', settingsAria: 'Provider settings', sendAria: 'Send message', closeAria: 'Close settings', skipLink: 'Skip to chat', agentReadyDesc: 'Available for chat or the collaboration panel. The CLI runs in the current project in read-only or plan mode.', agentMissingDesc: n => `Install and sign in to ${n} in Termux, then refresh the connection check.`, keyEnter: n => `Enter ${n} API key`, keyAria: n => `${n} API key`,
@@ -44,6 +44,17 @@ const agentsState = new Map();
 const collabSelection = new Set();
 const pendingKeys = new Map();
 const history = [];
+const deviceId = (() => {
+  let id = readSetting('ghost-device-id', '');
+  if (!/^[A-Za-z0-9_-]{1,64}$/.test(id)) {
+    id = crypto.randomUUID();
+    writeSetting('ghost-device-id', id);
+  }
+  return id;
+})();
+const pendingMemory = new Map();
+let memoryModeName = 'local';
+let memorySyncTimer;
 let commandBusy = false;
 let lastFocused = null;
 const $ = selector => document.querySelector(selector);
@@ -73,6 +84,7 @@ function applyPreferences() {
     'settings-eyebrow': 'settingsEyebrow', 'settings-title': 'settingsTitle', 'settings-subtitle': 'settingsSubtitle',
     'appearance-title': 'appearance', 'appearance-description': 'appearanceDescription', 'theme-label': 'themeLabel',
     'language-label': 'languageLabel', 'security-text': 'security', 'modal-footer-note': 'modalFooter', 'done-settings': 'done',
+    'memory-title': 'memoryTitle', 'memory-desc': 'memoryDesc', 'memory-sync': 'memorySync', 'memory-export': 'memoryExport', 'memory-import': 'memoryImport',
     'tools-title': 'toolsTitle', 'tools-subtitle': 'toolsSubtitle', 'tools-note': 'toolsNote', 'tools-refresh-label': 'toolsRefresh', 'tool-guidance-title': 'toolGuidanceTitle', 'tool-guidance-text': 'toolGuidanceText',
   };
   for (const [id, key] of Object.entries(labels)) {
@@ -226,6 +238,148 @@ function renderPending(label = selectedLabel($('#provider-select').value)) {
   messages.scrollTop = messages.scrollHeight;
 }
 
+function cleanMemoryEntry(entry) {
+  if (!entry || !['user', 'assistant'].includes(entry.role) || typeof entry.content !== 'string' || !entry.content.length) return null;
+  const parsed = Date.parse(entry.created_at);
+  return {
+    id: typeof entry.id === 'string' ? entry.id : crypto.randomUUID(),
+    role: entry.role,
+    content: entry.content.slice(0, 8000),
+    created_at: Number.isFinite(parsed) ? new Date(parsed).toISOString() : new Date().toISOString(),
+    metadata: entry.metadata && typeof entry.metadata === 'object' && !Array.isArray(entry.metadata) ? entry.metadata : {},
+  };
+}
+
+function sortMemory(entries) {
+  return entries.sort((a, b) => Date.parse(a.created_at) - Date.parse(b.created_at));
+}
+
+function persistHistory() {
+  try { localStorage.setItem('ghost-history', JSON.stringify(history.slice(-200))); } catch { }
+}
+
+function renderHistory() {
+  if (!history.length) return;
+  messages.replaceChildren();
+  for (const entry of history.slice(-40)) renderMessage(entry.role, entry.content, entry.metadata?.label);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function makeMemoryEntry(role, content, label = '') {
+  return { id: crypto.randomUUID(), role, content, created_at: new Date().toISOString(), metadata: label ? { label } : {} };
+}
+
+function recordMemory(...entries) {
+  for (const entry of entries) {
+    if (!entry) continue;
+    history.push(entry);
+    pendingMemory.set(entry.id, entry);
+  }
+  if (history.length > 200) history.splice(0, history.length - 200);
+  persistHistory();
+  updateSelectedProvider();
+  scheduleMemorySync();
+}
+
+function scheduleMemorySync() {
+  clearTimeout(memorySyncTimer);
+  memorySyncTimer = setTimeout(() => syncMemory(false), 1200);
+}
+
+async function syncMemory(manual = false) {
+  clearTimeout(memorySyncTimer);
+  const entries = [...pendingMemory.values()];
+  if (!entries.length && !manual) return;
+  try {
+    const response = await fetch('/api/memory', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ deviceId, entries }) });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || tr('requestFailed'));
+    for (const entry of entries) pendingMemory.delete(entry.id);
+    if (manual) toast(tr('memorySynced'));
+  } catch (error) {
+    if (manual) toast(tr('memoryFailed')(error.message));
+  }
+}
+
+async function refreshMemoryStatus() {
+  try {
+    const response = await fetch('/api/memory/status');
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || tr('requestFailed'));
+    memoryModeName = result.mode === 'supabase' ? 'supabase' : 'local';
+  } catch { memoryModeName = 'local'; }
+  const node = $('#memory-status');
+  if (node) {
+    node.textContent = memoryModeName === 'supabase' ? tr('memoryCloud') : tr('memoryLocal');
+    node.classList.toggle('cloud', memoryModeName === 'supabase');
+  }
+}
+
+async function loadMemory() {
+  try {
+    const stored = JSON.parse(readSetting('ghost-history', '[]'));
+    if (Array.isArray(stored)) for (const item of stored) {
+      const entry = cleanMemoryEntry(item);
+      if (entry) history.push(entry);
+    }
+  } catch { }
+  try {
+    const response = await fetch(`/api/memory?device=${encodeURIComponent(deviceId)}&limit=200`);
+    const result = await response.json();
+    if (response.ok && Array.isArray(result.entries)) {
+      const byId = new Map(history.map(entry => [entry.id, entry]));
+      for (const item of result.entries) {
+        const entry = cleanMemoryEntry(item);
+        if (entry && !byId.has(entry.id)) byId.set(entry.id, entry);
+      }
+      history.splice(0, history.length, ...sortMemory([...byId.values()]).slice(-200));
+      persistHistory();
+    }
+  } catch { }
+  renderHistory();
+  updateSelectedProvider();
+  refreshMemoryStatus();
+}
+
+async function exportMemory() {
+  try {
+    const entries = history.slice(-200);
+    const response = await fetch('/api/memory/export', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ deviceId, entries }) });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || tr('requestFailed'));
+    const url = URL.createObjectURL(new Blob([JSON.stringify(result, null, 2)], { type: 'application/json' }));
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `ghost-memory-${new Date().toISOString().slice(0, 10)}.json`;
+    document.body.append(link);
+    link.click();
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    toast(tr('memoryExported'));
+  } catch (error) { toast(tr('memoryFailed')(error.message)); }
+}
+
+async function importMemory(file) {
+  try {
+    const bundle = JSON.parse(await file.text());
+    const replace = window.confirm(tr('memoryImportAsk'));
+    const response = await fetch('/api/memory/import', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ bundle, deviceId, mode: replace ? 'replace' : 'merge' }) });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || tr('requestFailed'));
+    const byId = new Map(history.map(entry => [entry.id, entry]));
+    for (const item of bundle.entries || []) {
+      const entry = cleanMemoryEntry(item);
+      if (entry) byId.set(entry.id, entry);
+    }
+    history.splice(0, history.length, ...sortMemory([...byId.values()]).slice(-200));
+    persistHistory();
+    renderHistory();
+    updateSelectedProvider();
+    await syncMemory(false);
+    toast(tr('memoryImported'));
+  } catch (error) { toast(tr('memoryFailed')(error.message)); }
+}
+
 async function sendChat(text = input.value.trim()) {
   if (!text || busy) return;
   busy = true;
@@ -240,7 +394,7 @@ async function sendChat(text = input.value.trim()) {
     const result = await response.json();
     $('#pending-message')?.remove();
     if (!response.ok) throw new Error(result.error || tr('requestFailed'));
-    history.push({ role: 'user', content: text }, { role: 'assistant', content: result.reply });
+    recordMemory(makeMemoryEntry('user', text), makeMemoryEntry('assistant', result.reply, selectedLabel(id)));
     renderMessage('assistant', result.reply, selectedLabel(id));
     updateSelectedProvider();
   } catch (error) {
@@ -526,7 +680,7 @@ async function collaborate() {
       else renderMessage('assistant', `${tr('couldNotRespond')}: ${item.error}`, `${item.name} · ${tr('panelError')}`);
     }
     renderMessage('assistant', result.summary, `${selectedLabel(result.lead)} · ${tr('panelSynthesis')}`);
-    history.push({ role: 'user', content: prompt }, { role: 'assistant', content: result.summary });
+    recordMemory(makeMemoryEntry('user', prompt), makeMemoryEntry('assistant', result.summary, `${selectedLabel(result.lead)} · ${tr('panelSynthesis')}`));
     toast(tr('resultReady'));
   } catch (error) {
     $('#pending-message')?.remove();
@@ -552,7 +706,7 @@ async function executeTermuxCommand(command, askFirst = false) {
     if (!response.ok) throw new Error(result.error || tr('commandSendFailed'));
     const commandOutput = result.output || (result.ok ? tr('noOutput') : tr('commandFailedText'));
     $('#output').textContent = `$ ${command}\n\n${commandOutput}${result.timedOut ? tr('timedOut') : ''}`;
-    history.push({ role: 'user', content: `Termux output for \`${command}\` (exit ${result.code}):\n${commandOutput.slice(0, 4000)}` });
+    recordMemory(makeMemoryEntry('user', `Termux output for \`${command}\` (exit ${result.code}):\n${commandOutput.slice(0, 4000)}`));
     updateSelectedProvider();
     toast(tr('resultInContext'));
     return result;
@@ -582,6 +736,7 @@ $('#language-select').addEventListener('change', event => {
   applyPreferences();
   refreshStatus();
   refreshConnections();
+  refreshMemoryStatus();
 });
 $('#provider-select').addEventListener('change', updateSelectedProvider);
 $('#refresh-tools').addEventListener('click', refreshTools);
@@ -599,7 +754,15 @@ document.querySelectorAll('.suggestions button').forEach(button => button.addEve
   input.value = prompt;
   sendChat(prompt);
 }));
-$('#refresh-status').addEventListener('click', () => { refreshStatus(); refreshConnections(); });
+$('#refresh-status').addEventListener('click', () => { refreshStatus(); refreshConnections(); refreshMemoryStatus(); });
+$('#memory-sync').addEventListener('click', () => syncMemory(true));
+$('#memory-export').addEventListener('click', exportMemory);
+$('#memory-import').addEventListener('click', () => $('#memory-file').click());
+$('#memory-file').addEventListener('change', async event => {
+  const file = event.target.files?.[0];
+  event.target.value = '';
+  if (file) await importMemory(file);
+});
 $('#clear-output').addEventListener('click', () => { delete $('#last-run').dataset.ran; $('#output').textContent = tr('waiting'); $('#last-run').textContent = tr('notRun'); });
 document.addEventListener('keydown', event => {
   if ((event.metaKey || event.ctrlKey) && ['1', '2', '3'].includes(event.key)) {
@@ -627,4 +790,5 @@ $('#command-form').addEventListener('submit', async event => {
 refreshStatus();
 applyPreferences();
 refreshConnections();
+loadMemory();
 setInterval(refreshStatus, 12_000);

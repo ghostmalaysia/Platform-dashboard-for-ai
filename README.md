@@ -20,7 +20,13 @@ Buka **Tools & integrasi** untuk melihat CLI-Hub/CLI-Anything, Termux-MCP dan Te
 
 ## Sasaran platform
 
-Ghost Platform dirancang untuk **Web, Android dan iOS**. Dashboard web ialah antara muka bersama. Integrasi Termux dan Termux:API hanya untuk Android; web dan iOS memerlukan connector masing-masing dan kebenaran peranti yang berasingan. Aplikasi Android khusus serta pakej F-Droid belum dibina.
+Ghost Platform dirancang untuk **Web, Android dan iOS**. Dashboard web ialah antara muka bersama. Integrasi Termux dan Termux:API hanya untuk Android; web dan iOS memerlukan connector masing-masing dan kebenaran peranti yang berasingan.
+
+### APK Android (peringkat awal)
+
+Folder `android/` mengandungi aplikasi WebView sumber terbuka yang menyambung ke Ghost Platform Node.js pada `http://127.0.0.1:3000`. Ia aplikasi pendamping: buka Termux, jalankan `node server.js`, kemudian buka APK. Ia bukan server Termux yang dibundel di dalam APK. Untuk membina APK, perlukan JDK 17, Gradle 8.9 dan Android SDK API 35; jalankan `gradle --no-daemon -p android :app:assembleDebug`. Fail APK akan berada di `android/app/build/outputs/apk/debug/app-debug.apk`.
+
+F-Droid belum dihantar. Sebelum penghantaran, projek perlu menetapkan lesen FOSS, membina dan mengesahkan APK daripada sumber, melengkapkan metadata aplikasi, lalu menghantar metadata ke repositori `fdroiddata` untuk semakan. Rujuk [TOOL_SELECTION.md](TOOL_SELECTION.md) untuk nota kesediaan.
 
 ## Ejen yang disokong
 

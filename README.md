@@ -30,13 +30,17 @@ F-Droid belum dihantar. Sebelum penghantaran, projek perlu menetapkan lesen FOSS
 
 ## Ejen yang disokong
 
-- **Codex**: CLI lokal, guna sesi/log masuk Codex yang telah disediakan. Dashboard menggunakannya dalam mod baca sahaja.
-- **OpenCode**: CLI lokal, guna model dan penyedia yang dikonfigurasi dalam OpenCode; dashboard meminta mod plan.
+- **Codex**: CLI lokal, guna sesi/log masuk Codex yang telah disediakan. Dashboard menjalankan `codex exec --json --sandbox read-only --skip-git-repo-check` dan membaca peristiwa JSONL.
+- **OpenCode**: CLI lokal, guna model dan penyedia yang dikonfigurasi dalam OpenCode. Dashboard menjalankan `opencode run --agent plan`; agen `plan` tidak mengubah fail projek biasa, tetapi kebenaran shell masih dikawal oleh konfigurasi OpenCode.
 - **OpenRouter Free**: laluan model percuma `openrouter/free`.
 - **Google Gemini**: `gemini-2.5-flash` melalui free tier.
 - **Groq**: `openai/gpt-oss-20b` melalui akaun Free.
 
-CLI Codex dan OpenCode perlu tersedia dalam `PATH` Termux. Dashboard mengesan sama ada arahan `codex` dan `opencode` tersedia. Untuk penyedia API, tambah kunci dalam **Penyedia AI**; atau eksport `OPENROUTER_API_KEY`, `GEMINI_API_KEY`, dan `GROQ_API_KEY` sebelum menjalankan server.
+CLI Codex dan OpenCode perlu tersedia dalam `PATH` Termux. Dashboard mengesan sama ada arahan `codex` dan `opencode` tersedia. Semak flag dengan `codex exec --help` dan `opencode run --help` selepas menaik taraf, kerana antara muka CLI boleh berubah. Untuk penyedia API, tambah kunci dalam **Penyedia AI**; atau eksport `OPENROUTER_API_KEY`, `GEMINI_API_KEY`, dan `GROQ_API_KEY` sebelum menjalankan server.
+
+### Rujukan hulu dan notis
+
+Ghost Platform dibina oleh `ghostmalaysia` dan **tidak dibina, disokong, atau disekutukan dengan pasukan OpenCode atau OpenAI**. OpenCode ialah projek [anomalyco/opencode](https://github.com/anomalyco/opencode) di bawah lesen MIT; rujukan arahan ada dalam [dokumentasi CLI OpenCode](https://opencode.ai/docs/cli/) dan [dokumentasi agen OpenCode](https://opencode.ai/docs/agents/). Integrasi ini bergantung pada CLI yang dipasang dalam Termux, bukan kod repositori hulu; versi baharu boleh mengubah flag atau gelagat agen.
 
 Kunci yang ditaip dalam dashboard disimpan dalam memori server sahaja dan hilang apabila server dihentikan. Dashboard tidak membaca fail `.env` projek lain. Gunakan kunci Google/Groq yang benar-benar berada pada free tier; akaun bertier berbayar mungkin mengenakan caj. Free tier Google boleh menggunakan kandungan untuk menambah baik produk. OpenRouter Free mempunyai had permintaan dan ketersediaan model boleh berubah.
 

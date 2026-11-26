@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101412">
+  <title>AI • Termux Dashboard</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="/"><span class="brand-mark">✳</span><span>ruang<span class="brand-light">AI</span></span></a>
+      <div class="side-label">WORKSPACE</div>
+      <button class="nav-item active"><span>▦</span> Dashboard</button>
+      <button class="nav-item" id="focus-terminal"><span>⌘</span> Terminal lokal</button>
+      <div class="side-label second-label">SAMBUNGAN</div>
+      <div class="connection"><i class="dot"></i><span>Termux lokal</span><small id="side-state">Semak...</small></div>
+      <div class="sidebar-bottom"><div class="avatar">H</div><div><b>Host Android</b><small>Peranti awak</small></div><span class="ellipsis">•••</span></div>
+    </aside>
+    <main>
+      <header class="topbar"><div class="crumb">Workspace <span>/</span> <b>Dashboard</b></div><div class="top-right"><span class="local-tag"><i class="dot"></i> LOKAL</span><span class="help">?</span></div></header>
+      <section class="content">
+        <div class="heading-row"><div><div class="eyebrow">RUANG KERJA</div><h1>Dashboard</h1><p class="subtitle">AI dan Termux dalam satu tempat.</p></div><div class="date-chip"><span>◷</span> Sesi semasa</div></div>
+        <div class="stats">
+          <article class="stat-card"><div class="stat-top"><span>Status Termux</span><span class="icon-box green">⌁</span></div><div class="stat-value" id="status-text">Menyambung...</div><div class="stat-note"><i class="dot"></i><span id="status-note">Memeriksa pelayan lokal</span></div></article>
+          <article class="stat-card"><div class="stat-top"><span>Direktori kerja</span><span class="icon-box">⌂</span></div><div class="stat-value path" id="cwd">—</div><div class="stat-note">Lokasi arahan dijalankan</div></article>
+          <article class="stat-card"><div class="stat-top"><span>Runtime</span><span class="icon-box violet">⌘</span></div><div class="stat-value" id="runtime">—</div><div class="stat-note">Termux melalui Node.js</div></article>
+        </div>
+        <div class="section-head"><div><h2>Terminal lokal</h2><p>Hantar arahan terus kepada Termux pada peranti ini.</p></div><span class="secure-pill"><span>▣</span> Akses localhost sahaja</span></div>
+        <div class="terminal-card" id="terminal-card">
+          <div class="terminal-title"><div class="window-dots"><i></i><i></i><i></i></div><span>termux · shell</span><span class="terminal-live"><i class="dot"></i> bersedia</span></div>
+          <form id="command-form">
+            <label for="command">ARAHAN</label>
+            <div class="input-row"><span class="prompt">$</span><input id="command" autocomplete="off" spellcheck="false" placeholder="Contoh: pwd && ls -la"><button id="run-button" type="submit"><span>▶</span> Jalankan</button></div>
+          </form>
+          <div class="output-wrap"><div class="output-label"><span>OUTPUT</span><button type="button" id="clear-output">Kosongkan</button></div><pre id="output">Menunggu arahan…</pre></div>
+          <div class="terminal-foot"><span>⚠ Arahan berjalan dengan kebenaran pengguna Termux.</span><span id="last-run">Belum ada arahan</span></div>
+        </div>
+        <div class="bottom-grid"><article class="info-card"><div class="info-icon">✧</div><div><h3>Ruang untuk AI</h3><p>Dashboard ini sudah boleh menghantar arahan ke Termux. Sambungan model AI memerlukan pemilihan penyedia dan kunci API.</p><span class="coming">SAMBUNGAN AI · AKAN DATANG</span></div></article><article class="info-card security"><div class="info-icon">◈</div><div><h3>Direka untuk lokal</h3><p>Pelayan hanya mendengar pada peranti ini. Tiada port dibuka ke rangkaian Wi-Fi atau internet.</p><span class="secure-copy"><i class="dot"></i> Sambungan peribadi</span></div></article></div>
+        <footer>ruangAI <span>•</span> Berjalan pada peranti awak</footer>
+      </section>
+    </main>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>

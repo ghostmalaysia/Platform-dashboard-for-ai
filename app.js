@@ -14,7 +14,7 @@ const localeMessages = {
     chatTitle: 'Ruang untuk berfikir.', chatSubtitle: 'Pilih model, berbual, dan bawa arahan ke Termux bila awak bersedia.', manageConnections: 'Sambungan', providerInfo: 'Butiran & privasi', welcomeKicker: 'GHOST PLATFORM · RUANG AI', welcomeTitle: 'Hai! Apa yang kita bina hari ini?', welcomeText: 'Tanya soalan, minta bantuan kod, atau minta arahan Termux. Semak arahan sebelum menjalankannya.',
     suggestionProject: 'Fahami projek ini', suggestionStorage: 'Semak storan Termux', suggestionPlan: 'Rancang sambungan AI', enterHint: 'Enter untuk hantar', chatPlaceholder: 'Tulis mesej kepada AI…', send: 'Hantar', chatFootnote: 'Jangan hantar kata laluan atau data sulit. Model percuma mungkin mempunyai had penggunaan.',
     collabTitle: 'Panel kolaborasi', collabCaption: 'Pilih sekurang-kurangnya 2 ejen untuk banding dan satukan jawapan.', collabButton: 'Kerjasama AI', terminalTitle: 'Terminal lokal', terminalSubtitle: 'Arahan dijalankan pada Termux di telefon ini. Semak arahan sebelum menjalankannya.', deviceLabel: 'PERANTI BERSAMBUNG', local: 'LOKAL', ready: 'sedia', commandLabel: 'ARAHAN YANG AKAN DIJALANKAN', commandPlaceholder: 'Contoh: pwd && ls -la', run: 'Jalankan', output: 'OUTPUT', clear: 'Kosongkan', waiting: 'Menunggu arahan…', terminalFoot: '⚠ Berjalan sebagai pengguna Termux semasa.', notRun: 'Belum ada arahan', terminalNoteTitle: 'Arahan daripada AI perlu disemak', terminalNoteText: 'Arahan AI hanya berjalan selepas awak beri izin.', footer: 'Dashboard lokal untuk Termux',
-    settingsEyebrow: 'TETAPAN', settingsTitle: 'Penyedia & ejen', settingsSubtitle: 'Codex dan OpenCode berjalan melalui CLI lokal. API cloud menggunakan kunci yang awak sediakan.', appearance: 'Penampilan', appearanceDescription: 'Pilih warna dan bahasa Ghost Platform.', themeLabel: 'Tema warna', languageLabel: 'Bahasa', themeBlack: 'Hitam', themeBlue: 'Biru gelap', themeHacker: 'Hijau hacker', languageMalay: 'Bahasa Melayu', languageEnglish: 'English', security: 'Kunci tidak dipaparkan semula atau disimpan ke fail; kunci yang ditaip di sini hanya kekal dalam memori sehingga server dihentikan. Google dan Groq boleh mengenakan bayaran jika projek/akaun bukan tier percuma.', modalFooter: 'Jawapan kolaborasi dihantar kepada ejen yang dipilih. Jangan masukkan data sulit ke API cloud.', done: 'Selesai', memoryTitle: 'Memori & pemindahan', memoryDesc: 'Perbualan disimpan pada peranti. Bila Supabase disambung, data disegerakkan ke awan.', memoryLocal: 'Lokal', memoryCloud: 'Supabase', memorySync: 'Segerak', memoryExport: 'Eksport', memoryImport: 'Import', memorySyncing: 'Menyegerak…', memorySynced: 'Memori disegerakkan.', memoryExported: 'Fail memori dimuat turun.', memoryImported: 'Memori diimport.', memoryImportAsk: 'Gantikan semua memori untuk peranti ini? Pilih Batal untuk menggabungkan.', memoryFailed: n => `Memori gagal: ${n}`,
+    settingsEyebrow: 'TETAPAN', settingsTitle: 'Penyedia & ejen', settingsSubtitle: 'Codex dan OpenCode berjalan melalui CLI lokal. API cloud menggunakan kunci yang awak sediakan.', appearance: 'Penampilan', appearanceDescription: 'Pilih warna dan bahasa Ghost Platform.', themeLabel: 'Tema warna', languageLabel: 'Bahasa', themeBlack: 'Hitam', themeBlue: 'Biru gelap', themeHacker: 'Hijau hacker', languageMalay: 'Bahasa Melayu', languageEnglish: 'English', security: 'Kunci tidak dipaparkan semula atau disimpan ke fail; kunci yang ditaip di sini hanya kekal dalam memori sehingga server dihentikan. Google dan Groq boleh mengenakan bayaran jika projek/akaun bukan tier percuma.', modalFooter: 'Jawapan kolaborasi dihantar kepada ejen yang dipilih. Jangan masukkan data sulit ke API cloud.', done: 'Selesai', memoryTitle: 'Memori & pemindahan', memoryDesc: 'Perbualan disimpan pada peranti. Bila Supabase disambung, data disegerakkan ke awan.', memoryLocal: 'Lokal', memoryCloud: 'Supabase', memorySync: 'Segerak', memoryExport: 'Eksport', memoryImport: 'Import', memorySyncing: 'Menyegerak…', memorySynced: 'Memori disegerakkan.', memoryExported: 'Fail memori dimuat turun.', memoryImported: 'Memori diimport.', memoryImportAsk: 'Gantikan semua memori untuk peranti ini? Pilih Batal untuk menggabungkan.', memoryFailed: n => `Memori gagal: ${n}`, projectLabel: 'Projek', projectNone: 'Tiada projek', projectNew: 'Projek baru', projectManage: 'Urus AI & fail', projectNewPrompt: 'Nama projek baru?', projectDefault: 'Projek Utama', projectModalTitle: 'Ejen & memori projek', projectModalSubtitle: 'Pilih ejen, simpan fail kongsi, dan beri memori kepada setiap AI.', projectModalEyebrow: 'PROJEK', projectName: 'Nama projek', projectGoal: 'Matlamat', projectAgents: 'Ejen dalam projek', projectLead: 'Ejen utama', projectFiles: 'Fail kongsi', projectFilePlaceholder: 'nama fail', projectFileContentPlaceholder: 'kandungan fail', projectFileAdd: 'Tambah fail', projectMemory: 'Memori ejen', projectMemoryPlaceholder: 'Nota untuk ejen ini dalam projek ini…', projectMemorySave: 'Simpan memori', projectSave: 'Simpan projek', projectFooter: 'Simpan pilihan ejen sebelum menutup.', projectSummary: n => `${n.agents} AI · ${n.files} fail`, projectSaved: 'Projek disimpan.', projectCreated: 'Projek baru dicipta.', projectFileNeeded: 'Nama dan kandungan fail diperlukan.', projectNameNeeded: 'Nama projek diperlukan.', projectMemoryAgent: 'Pilih ejen dahulu.', projectLimit: 'Maksimum 5 AI bagi setiap projek.', projectFileHint: 'Fail dikongsi dengan semua ejen terpilih.', projectLoadFailed: n => `Workspace gagal: ${n}`,
     modeChat: 'Chat', modeChatDescription: 'Bual dengan model yang dipilih', modeAgent: 'AI Agent', modeAgentDescription: 'Rancang tugasan dan tindakan Termux.', connected: 'Disambung', notConnected: 'Belum disambung', cliReady: 'CLI tersedia', cliMissing: 'CLI tidak ditemui', keySaved: 'Masukkan kunci dahulu.', keyPlaceholder: 'Kunci telah disambung (tidak dipaparkan)', save: 'Simpan', testApi: 'Uji API', testing: 'Menguji…', disconnect: 'Putuskan', keyFoot: 'Kunci dihantar kepada penyedia ini apabila awak berbual atau menekan Uji API.',
     collabAvailable: n => `${n} ejen sedia · pilih sekurang-kurangnya 2 untuk berbincang.`, collabNeedMore: 'Sambungkan sekurang-kurangnya 2 ejen untuk memulakan kolaborasi.', pending: name => `${name} sedang berfikir…`, panelPending: n => `Panel ${n} ejen`, resultReady: 'Panel AI selesai membandingkan jawapan.', resultInContext: 'Hasil Termux (dipendekkan) tersedia dalam konteks chat.', commandReview: 'Semak dalam Terminal →', commandRun: 'Jalankan dengan izin', commandMoved: 'Arahan dimasukkan untuk semakan. Belum dijalankan.', commandConfirm: 'Benarkan arahan ini berjalan sebagai pengguna Termux?', terminalConnected: 'Termux bersambung', serverOffline: 'Server lokal tidak menjawab', startServer: 'Mulakan semula node server.js',
     errorPrefix: 'Ralat', requestFailed: 'Permintaan gagal.', keySaveFailed: 'Kunci tidak dapat disimpan.', keySavedNotice: n => `${n} disambung untuk sesi server ini.`, keyDisconnectedNotice: 'Kunci sesi diputuskan.', testFailed: n => `Ujian gagal: ${n}`, testOk: n => `${n}: API berjaya menjawab.`, collabPromptNeeded: 'Tulis soalan atau tugasan untuk panel AI dahulu.', collabSelectTwo: 'Pilih sekurang-kurangnya dua ejen yang tersedia.', collabFailed: 'Kolaborasi gagal.', panelView: 'pandangan panel', panelSynthesis: 'sintesis kolaborasi', couldNotRespond: 'Tidak dapat menjawab', panelError: 'ralat', collabErrorPrefix: 'Ralat kolaborasi', commandSendFailed: 'Arahan gagal dihantar.', noOutput: '(Tiada output)', commandFailedText: 'Arahan gagal.', timedOut: '\n\n[Masa arahan tamat selepas 30 saat]', sentAt: 'Dihantar', historyMessages: n => `${n} mesej dalam sesi ini`, toolsChecking: 'Memeriksa alat lokal…', toolsFailed: n => `Pemeriksaan alat gagal: ${n}`, checkAgain: 'Semak semula sambungan.', availableShort: 'Tersedia', localReady: 'Sedia', localOffline: 'Terputus', deviceOffline: 'PERANTI TERPUTUS', terminalOffline: 'terputus', settingsAria: 'Tetapan penyedia', sendAria: 'Hantar mesej', closeAria: 'Tutup tetapan', skipLink: 'Langsung ke chat', agentReadyDesc: 'Boleh dipilih untuk chat atau panel kolaborasi. CLI berjalan pada projek semasa dengan mod baca/rancang.', agentMissingDesc: n => `Pasang dan log masuk ke ${n} dalam Termux. Kemudian tekan Semak semula sambungan.`, keyEnter: n => `Masukkan kunci ${n}`, keyAria: n => `Kunci API ${n}`,
@@ -25,7 +25,7 @@ const localeMessages = {
     chatTitle: 'A space to think.', chatSubtitle: 'Choose a model, chat, and send commands to Termux when you are ready.', manageConnections: 'Connections', providerInfo: 'Details & privacy', welcomeKicker: 'GHOST PLATFORM · AI WORKSPACE', welcomeTitle: 'Hi! What are we building today?', welcomeText: 'Ask a question, get coding help, or request a Termux command. Review commands before running them.',
     suggestionProject: 'Explore this project', suggestionStorage: 'Check Termux storage', suggestionPlan: 'Plan an AI setup', enterHint: 'Enter to send', chatPlaceholder: 'Message an AI…', send: 'Send', chatFootnote: 'Do not send passwords or sensitive data. Free models may have usage limits.',
     collabTitle: 'Collaboration panel', collabCaption: 'Choose at least 2 agents to compare and combine their answers.', collabButton: 'Collaborate', terminalTitle: 'Local terminal', terminalSubtitle: 'Commands run in Termux on this phone. Review commands before running them.', deviceLabel: 'DEVICE CONNECTED', local: 'LOCAL', ready: 'ready', commandLabel: 'COMMAND TO RUN', commandPlaceholder: 'Example: pwd && ls -la', run: 'Run', output: 'OUTPUT', clear: 'Clear', waiting: 'Waiting for a command…', terminalFoot: '⚠ Runs as the current Termux user.', notRun: 'No commands yet', terminalNoteTitle: 'Review AI commands', terminalNoteText: 'AI commands only run after you approve them.', footer: 'Local dashboard for Termux',
-    settingsEyebrow: 'SETTINGS', settingsTitle: 'Providers & agents', settingsSubtitle: 'Codex and OpenCode run through local CLIs. Cloud APIs use keys you provide.', appearance: 'Appearance', appearanceDescription: 'Choose Ghost Platform colors and language.', themeLabel: 'Color theme', languageLabel: 'Language', themeBlack: 'Black', themeBlue: 'Dark blue', themeHacker: 'Hacker green', languageMalay: 'Bahasa Melayu', languageEnglish: 'English', security: 'API keys are not shown again or written to a file. Keys entered here remain in server memory until the server stops. Google and Groq may charge if the project/account is not on a free tier.', modalFooter: 'Collaboration answers are sent to the selected agents. Do not send sensitive data to cloud APIs.', done: 'Done', memoryTitle: 'Memory & migration', memoryDesc: 'Chats stay on this device. When Supabase is connected, they are synced to the cloud.', memoryLocal: 'Local', memoryCloud: 'Supabase', memorySync: 'Sync', memoryExport: 'Export', memoryImport: 'Import', memorySyncing: 'Syncing…', memorySynced: 'Memory synced.', memoryExported: 'Memory file downloaded.', memoryImported: 'Memory imported.', memoryImportAsk: 'Replace all memory for this device? Cancel to merge instead.', memoryFailed: n => `Memory failed: ${n}`,
+    settingsEyebrow: 'SETTINGS', settingsTitle: 'Providers & agents', settingsSubtitle: 'Codex and OpenCode run through local CLIs. Cloud APIs use keys you provide.', appearance: 'Appearance', appearanceDescription: 'Choose Ghost Platform colors and language.', themeLabel: 'Color theme', languageLabel: 'Language', themeBlack: 'Black', themeBlue: 'Dark blue', themeHacker: 'Hacker green', languageMalay: 'Bahasa Melayu', languageEnglish: 'English', security: 'API keys are not shown again or written to a file. Keys entered here remain in server memory until the server stops. Google and Groq may charge if the project/account is not on a free tier.', modalFooter: 'Collaboration answers are sent to the selected agents. Do not send sensitive data to cloud APIs.', done: 'Done', memoryTitle: 'Memory & migration', memoryDesc: 'Chats stay on this device. When Supabase is connected, they are synced to the cloud.', memoryLocal: 'Local', memoryCloud: 'Supabase', memorySync: 'Sync', memoryExport: 'Export', memoryImport: 'Import', memorySyncing: 'Syncing…', memorySynced: 'Memory synced.', memoryExported: 'Memory file downloaded.', memoryImported: 'Memory imported.', memoryImportAsk: 'Replace all memory for this device? Cancel to merge instead.', memoryFailed: n => `Memory failed: ${n}`, projectLabel: 'Project', projectNone: 'No project', projectNew: 'New project', projectManage: 'Manage AI & files', projectNewPrompt: 'New project name?', projectDefault: 'Main Project', projectModalTitle: 'Project agents & memory', projectModalSubtitle: 'Choose agents, save shared files, and give memory to each AI.', projectModalEyebrow: 'PROJECT', projectName: 'Project name', projectGoal: 'Goal', projectAgents: 'Agents in project', projectLead: 'Lead agent', projectFiles: 'Shared files', projectFilePlaceholder: 'file name', projectFileContentPlaceholder: 'file content', projectFileAdd: 'Add file', projectMemory: 'Agent memory', projectMemoryPlaceholder: 'Notes for this agent in this project…', projectMemorySave: 'Save memory', projectSave: 'Save project', projectFooter: 'Save agent choices before closing.', projectSummary: n => `${n.agents} AI · ${n.files} files`, projectSaved: 'Project saved.', projectCreated: 'New project created.', projectFileNeeded: 'File name and content are required.', projectNameNeeded: 'Project name is required.', projectMemoryAgent: 'Choose an agent first.', projectLimit: 'Maximum 5 AI per project.', projectFileHint: 'Files are shared with all selected agents.', projectLoadFailed: n => `Workspace failed: ${n}`,
     modeChat: 'Chat', modeChatDescription: 'Talk to the selected model', modeAgent: 'AI Agent', modeAgentDescription: 'Plan tasks and Termux actions.', connected: 'Connected', notConnected: 'Not connected', cliReady: 'CLI available', cliMissing: 'CLI not found', keySaved: 'Enter a key first.', keyPlaceholder: 'Key connected (hidden)', save: 'Save', testApi: 'Test API', testing: 'Testing…', disconnect: 'Disconnect', keyFoot: 'This provider receives the key when you chat or press Test API.',
     collabAvailable: n => `${n} agents ready · select at least 2 to collaborate.`, collabNeedMore: 'Connect at least 2 agents to start collaborating.', pending: name => `${name} is thinking…`, panelPending: n => `${n}-agent panel`, resultReady: 'The AI panel has compared its answers.', resultInContext: 'Truncated Termux output is available in chat context.', commandReview: 'Review in Terminal →', commandRun: 'Run with approval', commandMoved: 'Command added for review. It has not run yet.', commandConfirm: 'Allow this command to run as the Termux user?', terminalConnected: 'Termux connected', serverOffline: 'Local server is not responding', startServer: 'Restart node server.js',
     errorPrefix: 'Error', requestFailed: 'Request failed.', keySaveFailed: 'The key could not be saved.', keySavedNotice: n => `${n} connected for this server session.`, keyDisconnectedNotice: 'Session key disconnected.', testFailed: n => `Test failed: ${n}`, testOk: n => `${n}: API responded successfully.`, collabPromptNeeded: 'Write a question or task for the AI panel first.', collabSelectTwo: 'Select at least two available agents.', collabFailed: 'Collaboration failed.', panelView: 'panel view', panelSynthesis: 'collaboration synthesis', couldNotRespond: 'Could not respond', panelError: 'error', collabErrorPrefix: 'Collaboration error', commandSendFailed: 'Command could not be sent.', noOutput: '(No output)', commandFailedText: 'Command failed.', timedOut: '\n\n[Command timed out after 30 seconds]', sentAt: 'Sent', historyMessages: n => `${n} messages in this session`, toolsChecking: 'Checking local tools…', toolsFailed: n => `Could not check tools: ${n}`, checkAgain: 'Refresh the connection check.', availableShort: 'Available', localReady: 'Ready', localOffline: 'Offline', deviceOffline: 'DEVICE OFFLINE', terminalOffline: 'offline', settingsAria: 'Provider settings', sendAria: 'Send message', closeAria: 'Close settings', skipLink: 'Skip to chat', agentReadyDesc: 'Available for chat or the collaboration panel. The CLI runs in the current project in read-only or plan mode.', agentMissingDesc: n => `Install and sign in to ${n} in Termux, then refresh the connection check.`, keyEnter: n => `Enter ${n} API key`, keyAria: n => `${n} API key`,
@@ -53,6 +53,10 @@ const deviceId = (() => {
   return id;
 })();
 const pendingMemory = new Map();
+const projects = [];
+const workspaceFiles = [];
+const agentMemories = [];
+let currentProjectId = readSetting('ghost-project', '');
 let memoryModeName = 'local';
 let memorySyncTimer;
 let commandBusy = false;
@@ -85,6 +89,7 @@ function applyPreferences() {
     'appearance-title': 'appearance', 'appearance-description': 'appearanceDescription', 'theme-label': 'themeLabel',
     'language-label': 'languageLabel', 'security-text': 'security', 'modal-footer-note': 'modalFooter', 'done-settings': 'done',
     'memory-title': 'memoryTitle', 'memory-desc': 'memoryDesc', 'memory-sync': 'memorySync', 'memory-export': 'memoryExport', 'memory-import': 'memoryImport',
+    'project-label': 'projectLabel', 'project-new': 'projectNew', 'project-manage-text': 'projectManage', 'project-eyebrow': 'projectModalEyebrow', 'project-modal-title': 'projectModalTitle', 'project-modal-subtitle': 'projectModalSubtitle', 'project-name-label': 'projectName', 'project-goal-label': 'projectGoal', 'project-agents-title': 'projectAgents', 'project-lead-label': 'projectLead', 'project-files-title': 'projectFiles', 'project-file-hint': 'projectFileHint', 'project-file-add-text': 'projectFileAdd', 'project-memory-title': 'projectMemory', 'project-memory-save-text': 'projectMemorySave', 'project-save-text': 'projectSave', 'project-footer-note': 'projectFooter',
     'tools-title': 'toolsTitle', 'tools-subtitle': 'toolsSubtitle', 'tools-note': 'toolsNote', 'tools-refresh-label': 'toolsRefresh', 'tool-guidance-title': 'toolGuidanceTitle', 'tool-guidance-text': 'toolGuidanceText',
   };
   for (const [id, key] of Object.entries(labels)) {
@@ -110,6 +115,9 @@ function applyPreferences() {
   $('#chat-input').placeholder = tr('chatPlaceholder');
   $('#chat-input').setAttribute('aria-label', tr('chatPlaceholder'));
   $('#command').placeholder = tr('commandPlaceholder');
+  $('#project-file-name').placeholder = tr('projectFilePlaceholder');
+  $('#project-file-content').placeholder = tr('projectFileContentPlaceholder');
+  $('#project-memory-note').placeholder = tr('projectMemoryPlaceholder');
   $('#top-settings').setAttribute('aria-label', tr('settingsAria'));
   $('#send-button').setAttribute('aria-label', tr('sendAria'));
   $('#close-settings').setAttribute('aria-label', tr('closeAria'));
@@ -156,7 +164,7 @@ function updateSelectedProvider() {
     ? { openrouter: 'Model percuma auto', gemini: 'Gemini 2.5 Flash', groq: 'GPT OSS 20B', codex: 'Codex CLI', opencode: 'OpenCode Plan' }
     : { openrouter: 'Auto free model', gemini: 'Gemini 2.5 Flash', groq: 'GPT OSS 20B', codex: 'Codex CLI', opencode: 'OpenCode Plan' };
   $('#composer-model').textContent = `${selectedLabel(id)} · ${models[id] || 'local'}`;
-  $('#context-note').textContent = tr('historyMessages')(history.length);
+  $('#context-note').textContent = tr('historyMessages')(projectHistory().length);
   if (!$('#last-run').dataset.ran) {
     $('#output').textContent = tr('waiting');
     $('#last-run').textContent = tr('notRun');
@@ -258,10 +266,15 @@ function persistHistory() {
   try { localStorage.setItem('ghost-history', JSON.stringify(history.slice(-200))); } catch { }
 }
 
+function projectHistory() {
+  return history.filter(entry => !currentProjectId || entry.metadata?.projectId === currentProjectId);
+}
+
 function renderHistory() {
-  if (!history.length) return;
+  const entries = projectHistory().slice(-40);
+  if (!entries.length) return;
   messages.replaceChildren();
-  for (const entry of history.slice(-40)) renderMessage(entry.role, entry.content, entry.metadata?.label);
+  for (const entry of entries) renderMessage(entry.role, entry.content, entry.metadata?.label);
   messages.scrollTop = messages.scrollHeight;
 }
 
@@ -272,6 +285,7 @@ function makeMemoryEntry(role, content, label = '') {
 function recordMemory(...entries) {
   for (const entry of entries) {
     if (!entry) continue;
+    if (!entry.metadata?.projectId && currentProjectId) entry.metadata = { ...(entry.metadata || {}), projectId: currentProjectId };
     history.push(entry);
     pendingMemory.set(entry.id, entry);
   }
@@ -344,7 +358,7 @@ async function loadMemory() {
 async function exportMemory() {
   try {
     const entries = history.slice(-200);
-    const response = await fetch('/api/memory/export', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ deviceId, entries }) });
+    const response = await fetch('/api/memory/export', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ deviceId, entries, workspace: { items: workspaceItems() } }) });
     const result = await response.json();
     if (!response.ok) throw new Error(result.error || tr('requestFailed'));
     const url = URL.createObjectURL(new Blob([JSON.stringify(result, null, 2)], { type: 'application/json' }));
@@ -373,6 +387,10 @@ async function importMemory(file) {
     }
     history.splice(0, history.length, ...sortMemory([...byId.values()]).slice(-200));
     persistHistory();
+    mergeWorkspace(bundle.workspace?.items || []);
+    persistWorkspace();
+    renderProjectSelect();
+    renderCollabOptions();
     renderHistory();
     updateSelectedProvider();
     await syncMemory(false);
@@ -380,17 +398,296 @@ async function importMemory(file) {
   } catch (error) { toast(tr('memoryFailed')(error.message)); }
 }
 
+function workspaceItems() {
+  return [...projects, ...workspaceFiles, ...agentMemories];
+}
+
+function normalizeWorkspaceLocal(item) {
+  if (!item || typeof item !== 'object' || !['project', 'file', 'agent_memory'].includes(item.kind)) return null;
+  if (typeof item.id !== 'string' || typeof item.projectId !== 'string') return null;
+  return { ...item, agentId: typeof item.agentId === 'string' ? item.agentId : '', data: item.data && typeof item.data === 'object' ? item.data : {}, updated_at: item.updated_at || item.updatedAt || new Date().toISOString() };
+}
+
+function mergeWorkspace(items) {
+  for (const raw of items || []) {
+    const item = normalizeWorkspaceLocal(raw);
+    if (!item) continue;
+    const target = item.kind === 'project' ? projects : item.kind === 'file' ? workspaceFiles : agentMemories;
+    const index = target.findIndex(existing => existing.id === item.id);
+    if (index >= 0) target[index] = { ...target[index], ...item };
+    else target.push(item);
+  }
+}
+
+function persistWorkspace() {
+  try { localStorage.setItem('ghost-workspace', JSON.stringify(workspaceItems())); } catch { }
+}
+
+function allAgentIds() {
+  return [...Object.keys(providerInfo), ...Object.keys(agentInfo)];
+}
+
+function currentProject() {
+  return projects.find(item => item.projectId === currentProjectId) || projects[0] || null;
+}
+
+function currentFiles() {
+  return workspaceFiles.filter(item => item.projectId === currentProjectId);
+}
+
+function currentMemoryFor(agentId) {
+  return agentMemories.find(item => item.projectId === currentProjectId && item.agentId === agentId) || null;
+}
+
+function createProject(name, goal = '', agents = [], lead = '') {
+  const id = crypto.randomUUID();
+  const project = { id, kind: 'project', projectId: id, agentId: '', data: { name, goal, agents: agents.slice(0, 5), lead }, updated_at: new Date().toISOString() };
+  projects.push(project);
+  currentProjectId = id;
+  writeSetting('ghost-project', id);
+  return project;
+}
+
+async function writeWorkspace(items, replaceProject = '') {
+  try {
+    const response = await fetch('/api/workspace', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ deviceId, items, replaceProject }) });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || tr('requestFailed'));
+    return true;
+  } catch (error) {
+    toast(tr('projectLoadFailed')(error.message));
+    return false;
+  }
+}
+
+function updateProjectSummary() {
+  const node = $('#project-summary');
+  if (!node) return;
+  const project = currentProject();
+  node.textContent = tr('projectSummary')({ agents: project?.data?.agents?.length || 0, files: currentFiles().length });
+}
+
+function renderProjectSelect() {
+  const select = $('#project-select');
+  if (!select) return;
+  select.replaceChildren();
+  const empty = document.createElement('option'); empty.value = ''; empty.textContent = tr('projectNone'); select.append(empty);
+  for (const project of projects) {
+    const option = document.createElement('option'); option.value = project.projectId; option.textContent = project.data.name || tr('projectNone'); select.append(option);
+  }
+  currentProjectId = currentProject()?.projectId || '';
+  select.value = currentProjectId;
+  updateProjectSummary();
+}
+
+function selectProject(projectId) {
+  currentProjectId = projectId;
+  writeSetting('ghost-project', projectId);
+  collabSelection.clear();
+  $('#collab-agents')?.replaceChildren();
+  const project = currentProject();
+  for (const id of project?.data?.agents || []) if (selectedAvailable(id)) collabSelection.add(id);
+  renderCollabOptions();
+  renderHistory();
+  updateSelectedProvider();
+  updateProjectSummary();
+}
+
+function saveProjectAgents(agents) {
+  const project = currentProject();
+  if (!project) return;
+  project.data.agents = agents.slice(0, 5);
+  if (project.data.lead && !project.data.agents.includes(project.data.lead)) project.data.lead = project.data.agents[0] || '';
+  project.updated_at = new Date().toISOString();
+  persistWorkspace();
+  updateProjectSummary();
+  writeWorkspace([project]);
+}
+
+function renderProjectAgents() {
+  const box = $('#project-agents');
+  if (!box) return;
+  const project = currentProject();
+  const selected = new Set(project?.data?.agents || []);
+  box.replaceChildren();
+  for (const id of allAgentIds()) {
+    const label = document.createElement('label'); label.className = 'collab-chip';
+    const check = document.createElement('input'); check.type = 'checkbox'; check.value = id; check.checked = selected.has(id);
+    check.addEventListener('change', () => {
+      const checked = [...box.querySelectorAll('input:checked')].map(node => node.value);
+      if (checked.length > 5) { check.checked = false; toast(tr('projectLimit')); }
+    });
+    const name = document.createElement('span'); name.textContent = providerInfo[id]?.name || agentInfo[id]?.name || id;
+    label.append(check, name); box.append(label);
+  }
+}
+
+function renderProjectLead() {
+  const select = $('#project-lead');
+  if (!select) return;
+  const project = currentProject();
+  const agents = project?.data?.agents?.length ? project.data.agents : allAgentIds();
+  select.replaceChildren();
+  for (const id of agents) {
+    const option = document.createElement('option'); option.value = id; option.textContent = providerInfo[id]?.name || agentInfo[id]?.name || id; select.append(option);
+  }
+  select.value = project?.data?.lead && agents.includes(project.data.lead) ? project.data.lead : agents[0] || '';
+}
+
+function renderProjectFiles() {
+  const box = $('#project-file-list');
+  if (!box) return;
+  box.replaceChildren();
+  const files = currentFiles();
+  if (!files.length) return;
+  for (const file of files) {
+    const row = document.createElement('div'); row.className = 'project-file-row';
+    const text = document.createElement('div');
+    const name = document.createElement('b'); name.textContent = file.data.name || 'file';
+    const preview = document.createElement('small'); preview.textContent = String(file.data.content || '').slice(0, 80);
+    text.append(name, preview);
+    const remove = document.createElement('button'); remove.type = 'button'; remove.className = 'project-file-remove'; remove.textContent = '×';
+    remove.setAttribute('aria-label', tr('closeAria'));
+    remove.addEventListener('click', async () => {
+      const index = workspaceFiles.findIndex(item => item.id === file.id);
+      if (index >= 0) workspaceFiles.splice(index, 1);
+      persistWorkspace();
+      const items = [...projects.filter(item => item.projectId === currentProjectId), ...currentFiles(), ...agentMemories.filter(item => item.projectId === currentProjectId)];
+      await writeWorkspace(items, currentProjectId);
+      renderProjectFiles();
+      updateProjectSummary();
+    });
+    row.append(text, remove); box.append(row);
+  }
+}
+
+function renderProjectMemoryAgent() {
+  const select = $('#project-memory-agent');
+  if (!select) return;
+  select.replaceChildren();
+  for (const id of allAgentIds()) {
+    const option = document.createElement('option'); option.value = id; option.textContent = providerInfo[id]?.name || agentInfo[id]?.name || id; select.append(option);
+  }
+  const saved = agentMemories.find(item => item.projectId === currentProjectId);
+  select.value = saved?.agentId || allAgentIds()[0] || '';
+}
+
+function renderProjectMemoryNote() {
+  const note = $('#project-memory-note');
+  const select = $('#project-memory-agent');
+  if (!note || !select) return;
+  note.value = currentMemoryFor(select.value)?.data?.notes || '';
+}
+
+function renderProjectModal() {
+  const project = currentProject();
+  if (!project) return;
+  $('#project-name').value = project.data.name || '';
+  $('#project-goal').value = project.data.goal || '';
+  renderProjectAgents();
+  renderProjectLead();
+  renderProjectFiles();
+  renderProjectMemoryAgent();
+  renderProjectMemoryNote();
+  updateProjectSummary();
+}
+
+function openProjectModal() {
+  lastFocused = document.activeElement;
+  if (!currentProject()) createProject(tr('projectDefault'), '', ['codex', 'opencode'], 'opencode');
+  renderProjectSelect();
+  renderProjectModal();
+  $('#project-modal').hidden = false;
+  $('#close-project').focus();
+}
+
+function closeProjectModal() {
+  $('#project-modal').hidden = true;
+  if (lastFocused && lastFocused.isConnected) lastFocused.focus();
+}
+
+function saveProjectDetails() {
+  const project = currentProject();
+  if (!project) return;
+  const name = $('#project-name').value.trim();
+  if (!name) return toast(tr('projectNameNeeded'));
+  const agents = [...$('#project-agents').querySelectorAll('input:checked')].map(node => node.value);
+  if (agents.length > 5) return toast(tr('projectLimit'));
+  const chosenLead = $('#project-lead').value;
+  project.data = { ...project.data, name, goal: $('#project-goal').value.trim(), agents, lead: agents.includes(chosenLead) ? chosenLead : (agents[0] || '') };
+  project.updated_at = new Date().toISOString();
+  persistWorkspace();
+  renderProjectSelect();
+  writeWorkspace([project]).then(ok => { if (ok) toast(tr('projectSaved')); });
+  selectProject(project.projectId);
+}
+
+function addProjectFile() {
+  const project = currentProject();
+  if (!project) return;
+  const name = $('#project-file-name').value.trim();
+  const content = $('#project-file-content').value;
+  if (!name || !content.trim()) return toast(tr('projectFileNeeded'));
+  const file = { id: crypto.randomUUID(), kind: 'file', projectId: project.projectId, agentId: '', data: { name, content }, updated_at: new Date().toISOString() };
+  workspaceFiles.push(file);
+  $('#project-file-name').value = '';
+  $('#project-file-content').value = '';
+  persistWorkspace();
+  writeWorkspace([file]).then(ok => { if (ok) toast(tr('projectSaved')); });
+  renderProjectFiles();
+  updateProjectSummary();
+}
+
+function saveAgentMemory() {
+  const project = currentProject();
+  if (!project) return;
+  const agentId = $('#project-memory-agent').value;
+  if (!agentId) return toast(tr('projectMemoryAgent'));
+  const notes = $('#project-memory-note').value;
+  let memory = currentMemoryFor(agentId);
+  if (memory) {
+    memory.data.notes = notes;
+    memory.updated_at = new Date().toISOString();
+  } else {
+    memory = { id: crypto.randomUUID(), kind: 'agent_memory', projectId: project.projectId, agentId, data: { notes }, updated_at: new Date().toISOString() };
+    agentMemories.push(memory);
+  }
+  persistWorkspace();
+  writeWorkspace([memory]).then(ok => { if (ok) toast(tr('projectSaved')); });
+}
+
+async function loadWorkspace() {
+  try { mergeWorkspace(JSON.parse(readSetting('ghost-workspace', '[]'))); } catch { }
+  try {
+    const response = await fetch(`/api/workspace?device=${encodeURIComponent(deviceId)}`);
+    const result = await response.json();
+    if (response.ok && Array.isArray(result.items)) mergeWorkspace(result.items);
+  } catch { }
+  if (!projects.length) {
+    const project = createProject(tr('projectDefault'), '', ['codex', 'opencode'], 'opencode');
+    for (const entry of history) if (!entry.metadata?.projectId) entry.metadata = { ...(entry.metadata || {}), projectId: project.projectId };
+    persistHistory();
+  }
+  currentProjectId = currentProject()?.projectId || '';
+  writeSetting('ghost-project', currentProjectId);
+  persistWorkspace();
+  renderProjectSelect();
+  renderHistory();
+  updateSelectedProvider();
+  renderCollabOptions();
+}
+
 async function sendChat(text = input.value.trim()) {
   if (!text || busy) return;
   busy = true;
   const id = $('#provider-select').value;
-  const next = [...history, { role: 'user', content: text }].slice(-20);
+  const next = [...projectHistory(), { role: 'user', content: text }].slice(-20);
   renderMessage('user', text);
   input.value = '';
   sendButton.disabled = true;
   renderPending(selectedLabel(id));
   try {
-    const response = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ provider: id, mode: workMode, messages: next }) });
+    const response = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ provider: id, mode: workMode, messages: next, deviceId, projectId: currentProjectId }) });
     const result = await response.json();
     $('#pending-message')?.remove();
     if (!response.ok) throw new Error(result.error || tr('requestFailed'));
@@ -513,8 +810,12 @@ function renderCollabOptions() {
   const box = $('#collab-agents');
   const checked = new Set([...box.querySelectorAll('input:checked')].map(node => node.value));
   if (!checked.size && !collabSelection.size) {
-    const first = Object.keys(providerInfo).find(id => selectedAvailable(id)) || Object.keys(agentInfo).find(id => selectedAvailable(id));
-    if (first) checked.add(first);
+    const fromProject = (currentProject()?.data?.agents || []).filter(id => selectedAvailable(id)).slice(0, 5);
+    for (const id of fromProject) checked.add(id);
+    if (!checked.size) {
+      const first = Object.keys(providerInfo).find(id => selectedAvailable(id)) || Object.keys(agentInfo).find(id => selectedAvailable(id));
+      if (first) checked.add(first);
+    }
   }
   box.replaceChildren();
   const all = [...Object.keys(providerInfo).map(id => ({ id, name: providerInfo[id].name })), ...Object.keys(agentInfo).map(id => ({ id, name: agentInfo[id].name }))];
@@ -524,7 +825,13 @@ function renderCollabOptions() {
     const check = document.createElement('input'); check.type = 'checkbox'; check.value = item.id; check.disabled = !enabled;
     check.checked = enabled && checked.has(item.id);
     check.addEventListener('change', () => {
+      if (check.checked && collabSelection.size >= 5) {
+        check.checked = false;
+        toast(tr('projectLimit'));
+        return;
+      }
       if (check.checked) collabSelection.add(item.id); else collabSelection.delete(item.id);
+      saveProjectAgents([...collabSelection]);
       updateCollabButton();
     });
     const name = document.createElement('span'); name.textContent = item.name;
@@ -664,14 +971,15 @@ async function collaborate() {
   const participants = [...$('#collab-agents').querySelectorAll('input:checked')].map(node => node.value);
   if (participants.length < 2) return toast(tr('collabSelectTwo'));
   const selected = $('#provider-select').value;
-  const lead = participants.includes(selected) ? selected : participants[0];
+  const project = currentProject();
+  const lead = project?.data?.lead && participants.includes(project.data.lead) ? project.data.lead : (participants.includes(selected) ? selected : participants[0]);
   busy = true; $('#collab-button').disabled = true; sendButton.disabled = true;
-  const next = [...history, { role: 'user', content: prompt }].slice(-16);
+  const next = [...projectHistory(), { role: 'user', content: prompt }].slice(-16);
   renderMessage('user', `✦ ${tr('collabTitle')} (${participants.map(selectedLabel).join(', ')}):\n${prompt}`);
   input.value = '';
   renderPending(tr('panelPending')(participants.length));
   try {
-    const response = await fetch('/api/collaborate', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ participants, lead, mode: workMode, messages: next }) });
+    const response = await fetch('/api/collaborate', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ participants, lead, mode: workMode, messages: next, deviceId, projectId: currentProjectId }) });
     const result = await response.json();
     $('#pending-message')?.remove();
     if (!response.ok) throw new Error(result.error || tr('collabFailed'));
@@ -763,6 +1071,23 @@ $('#memory-file').addEventListener('change', async event => {
   event.target.value = '';
   if (file) await importMemory(file);
 });
+$('#project-select').addEventListener('change', event => selectProject(event.target.value));
+$('#project-new').addEventListener('click', () => {
+  const name = window.prompt(tr('projectNewPrompt'));
+  if (!name?.trim()) return;
+  const project = createProject(name.trim(), '', ['codex', 'opencode'], 'opencode');
+  persistWorkspace();
+  writeWorkspace([project]);
+  selectProject(project.projectId);
+  renderProjectSelect();
+  toast(tr('projectCreated'));
+});
+$('#project-manage').addEventListener('click', openProjectModal);
+$('#close-project').addEventListener('click', closeProjectModal);
+$('#project-save').addEventListener('click', saveProjectDetails);
+$('#project-file-add').addEventListener('click', addProjectFile);
+$('#project-memory-save').addEventListener('click', saveAgentMemory);
+$('#project-memory-agent').addEventListener('change', renderProjectMemoryNote);
 $('#clear-output').addEventListener('click', () => { delete $('#last-run').dataset.ran; $('#output').textContent = tr('waiting'); $('#last-run').textContent = tr('notRun'); });
 document.addEventListener('keydown', event => {
   if ((event.metaKey || event.ctrlKey) && ['1', '2', '3'].includes(event.key)) {
@@ -770,10 +1095,11 @@ document.addEventListener('keydown', event => {
     switchView({ 1: 'chat', 2: 'terminal', 3: 'tools' }[event.key]);
     return;
   }
-  if ($('#settings-modal').hidden) return;
-  if (event.key === 'Escape') { closeSettings(); return; }
+  const modal = !$('#project-modal').hidden ? $('#project-modal') : (!$('#settings-modal').hidden ? $('#settings-modal') : null);
+  if (!modal) return;
+  if (event.key === 'Escape') { if (modal.id === 'project-modal') closeProjectModal(); else closeSettings(); return; }
   if (event.key !== 'Tab') return;
-  const focusables = [...$('#settings-modal').querySelectorAll('button, select, input, a[href]')].filter(node => !node.disabled);
+  const focusables = [...modal.querySelectorAll('button, select, input, a[href]')].filter(node => !node.disabled && node.offsetParent !== null);
   if (!focusables.length) return;
   const first = focusables[0];
   const last = focusables.at(-1);
@@ -790,5 +1116,5 @@ $('#command-form').addEventListener('submit', async event => {
 refreshStatus();
 applyPreferences();
 refreshConnections();
-loadMemory();
+loadMemory().then(loadWorkspace);
 setInterval(refreshStatus, 12_000);

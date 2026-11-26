@@ -50,7 +50,7 @@ Pilih sekurang-kurangnya dua ejen yang tersedia, kemudian tekan **Kerjasama AI**
 
 ## Memori & pemindahan
 
-Perbualan disimpan dalam `localStorage` peranti (`ghost-history`) dan disegerakkan ke server lokal. Jika `SUPABASE_URL` dan `SUPABASE_SERVICE_ROLE_KEY` (atau `SUPABASE_ANON_KEY` dengan RLS yang betul) disediakan sebelum `node server.js`, memori disimpan dalam jadual `ghost_memory` di Supabase; sebaliknya ia kekal lokal. Kunci itu tidak dihantar ke pelayar atau APK.
+Perbualan disimpan dalam `localStorage` peranti (`ghost-history`) dan disegerakkan ke server lokal. Jika `SUPABASE_URL` dan `SUPABASE_SERVICE_ROLE_KEY` (atau `SUPABASE_ANON_KEY` dengan RLS yang betul) disediakan sebelum `node server.js`, memori disimpan dalam jadual `ghost_memory` di Supabase; sebaliknya ia kekal lokal. Workspace projek (`ghost-workspace`) pula menyimpan senarai projek, ejen terpilih, fail kongsi dan memori per-ejen. Kunci itu tidak dihantar ke pelayar atau APK.
 
 Buat jadual ini dalam Supabase SQL Editor:
 
@@ -65,9 +65,26 @@ create table if not exists public.ghost_memory (
   schema_version integer not null default 1
 );
 create index if not exists ghost_memory_device_created_idx on public.ghost_memory (device_id, created_at);
+
+create table if not exists public.ghost_workspace (
+  id uuid primary key,
+  device_id text not null,
+  kind text not null check (kind in ('project', 'file', 'agent_memory')),
+  project_id text not null,
+  agent_id text not null default '',
+  data jsonb not null default '{}'::jsonb,
+  updated_at timestamptz not null default now()
+);
+create index if not exists ghost_workspace_device_project_idx on public.ghost_workspace (device_id, project_id);
 ```
 
-Guna **Penyedia AI → Memori & pemindahan** untuk **Segerak**, **Eksport** (JSON), atau **Import** (gabung/ganti). Bundle eksport mengandungi `app`, `schema`, `exportedAt`, `deviceId` dan `entries`; tiada API key. Endpoint yang tersedia: `GET /api/memory`, `POST /api/memory`, `POST /api/memory/export`, `POST /api/memory/import`. Bila server baru tersedia, eksport dari sini dan import ke server itu menggunakan adapter yang sama. Projek Supabase free berhenti selepas 1 minggu tanpa aktiviti.
+Guna **Penyedia AI → Memori & pemindahan** untuk **Segerak**, **Eksport** (JSON), atau **Import** (gabung/ganti). Bundle eksport schema `2` mengandungi `app`, `schema`, `exportedAt`, `deviceId`, `entries` dan `workspace.items`; bundle schema `1` masih diterima tanpa workspace. Tiada API key dalam bundle. Endpoint memori: `GET /api/memory`, `POST /api/memory`, `POST /api/memory/export`, `POST /api/memory/import`. Endpoint workspace: `GET /api/workspace?device=...&project=...` dan `POST /api/workspace`. Bila server baru tersedia, eksport dari sini dan import ke server itu menggunakan adapter yang sama. Projek Supabase free berhenti selepas 1 minggu tanpa aktiviti.
+
+## Projek & ejen terpilih
+
+Bar **Projek** di atas panel chat membolehkan projek dibuat/ditukar dan butiran dibuka melalui **Urus AI & fail**. Dalam satu projek, pilih 2 hingga 5 ejen (maksimum 5), tetapkan ejen utama, simpan fail kongsi, dan tulis nota memori berasingan untuk setiap ejen. Fail kongsi dan memori ejen disuntik ke konteks sebagai data rujukan; kandungan fail tidak dibenarkan mengatasi arahan pengguna. Panel kolaborasi dan chat menggunakan senarai ejen projek semasa. `history` juga dipisahkan mengikut `metadata.projectId`.
+
+Setiap ejen menerima konteks projek yang berbeza: fail kongsi sama untuk semua, tetapi nota memori hanya untuk ejen itu. Ejen utama projek menghasilkan sintesis kolaborasi apabila tersedia dalam senarai ejen. Konteks projek dihantar kepada penyedia cloud yang dipilih, jangan simpan kata laluan atau data sulit dalam fail kongsi.
 
 ## Termux lokal
 

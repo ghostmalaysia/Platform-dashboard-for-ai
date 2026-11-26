@@ -17,6 +17,11 @@ const localAgents = {
   codex: { name: 'Codex', command: 'codex', detail: 'Codex CLI · sesi ChatGPT atau kaedah log masuk Codex' },
   opencode: { name: 'OpenCode', command: 'opencode', detail: 'OpenCode CLI · model dan penyedia dikawal konfigurasi OpenCode' },
 };
+const toolsCatalog = [
+  { id: 'cli-hub', name: 'CLI-Anything / CLI-Hub', command: 'cli-hub', github: 'https://github.com/HKUDS/CLI-Anything', license: 'Apache-2.0', install: 'pip install cli-anything-hub', needs: 'Python/pip; individual tools may need desktop software or extra dependencies', why: 'Discover, inspect and manage agent-ready CLI tools. Treat the hub as a catalog; install only the tools that suit Android/Termux.' },
+  { id: 'termux-mcp', name: 'Termux-MCP', command: 'termux-mcp', github: 'https://github.com/termuxgpt/termux-mcp', license: 'AGPL-3.0', install: 'pip install termux-mcp', needs: 'Python/pip; separate local service, loopback-only by default', why: 'Adds structured Termux/device tools, streaming and risk gates. Community project; review its policies before connecting agents.' },
+  { id: 'termux-api', name: 'Termux:API', command: 'termux-battery-status', github: 'https://github.com/termux/termux-api', license: 'GPLv3', install: 'pkg install termux-api', needs: 'Termux:API Android companion app from the same trusted source, plus Android permissions', why: 'Official Termux add-on that exposes selected Android device features to Termux commands.' },
+];
 const systemPrompt = 'You are an AI in a shared Termux workspace. Reply in the user\'s language. You may inspect the current project through your local agent tools only where configured. Never claim a shell command has run unless the tool returned its result. If a command is needed, explain it and put the exact command in one fenced bash code block so the user can review and run it in the Termux panel.';
 
 function send(res, status, body, type = 'application/json; charset=utf-8') {
@@ -143,6 +148,15 @@ const server = http.createServer(async (req, res) => {
   if (req.method === 'GET' && url.pathname === '/api/agents') {
     const agents = await Promise.all(Object.entries(localAgents).map(async ([id, item]) => ({ id, name: item.name, detail: item.detail, installed: await availableCommand(item.command) })));
     return send(res, 200, { agents });
+  }
+  if (req.method === 'GET' && url.pathname === '/api/tools') {
+    const tools = await Promise.all(toolsCatalog.map(async item => ({ ...item, installed: await availableCommand(item.command) })));
+    let termuxMcpRunning = false;
+    try {
+      const response = await fetch('http://127.0.0.1:8080/ping', { signal: AbortSignal.timeout(900) });
+      termuxMcpRunning = response.ok;
+    } catch { /* Optional Termux-MCP service is not running. */ }
+    return send(res, 200, { tools, termuxMcpRunning });
   }
   if (req.method === 'POST' && url.pathname.startsWith('/api/providers/') && url.pathname.endsWith('/key')) {
     const id = url.pathname.split('/')[3];

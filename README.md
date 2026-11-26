@@ -14,6 +14,14 @@ Buka `http://127.0.0.1:3000` pada pelayar Android. Tiada pakej Node tambahan dip
 
 Pilih tema hitam, biru gelap atau hijau hacker serta Bahasa Melayu atau English melalui **Penyedia AI → Penampilan**. Tetapan disimpan dalam pelayar peranti. Mod **Chat** menjawab seperti perbualan biasa; **AI Agent** meminta model merancang tugasan dan tindakan dengan lebih berstruktur. Arahan Termux masih perlu disemak dan diluluskan secara berasingan.
 
+## Tools GitHub
+
+Buka **Tools & integrasi** untuk melihat CLI-Hub/CLI-Anything, Termux-MCP dan Termux:API, serta menyemak sama ada arahan tempatan tersedia. Kad alat hanya menyediakan arahan dalam Terminal untuk semakan; tiada pemasangan automatik. Butiran pemilihan dan kesesuaian lesen ada dalam [TOOL_SELECTION.md](TOOL_SELECTION.md).
+
+## Sasaran platform
+
+Ghost Platform dirancang untuk **Web, Android dan iOS**. Dashboard web ialah antara muka bersama. Integrasi Termux dan Termux:API hanya untuk Android; web dan iOS memerlukan connector masing-masing dan kebenaran peranti yang berasingan. Aplikasi Android khusus serta pakej F-Droid belum dibina.
+
 ## Ejen yang disokong
 
 - **Codex**: CLI lokal, guna sesi/log masuk Codex yang telah disediakan. Dashboard menggunakannya dalam mod baca sahaja.

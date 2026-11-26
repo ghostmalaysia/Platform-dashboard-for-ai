@@ -9,7 +9,8 @@ const agentInfo = {
 };
 const localeMessages = {
   ms: {
-    workspaceType: 'Peribadi', workspaceSection: 'RUANG KERJA', navChat: 'Chat AI', navTerminal: 'Terminal lokal', navProviders: 'Penyedia AI', coreAgents: 'EJEN TERAS', freeOptions: 'PILIHAN PERCUMA', localTermux: 'Termux lokal', checkConnection: 'Semak sambungan', profileName: 'Pengguna Ghost Platform', profileSubtitle: 'Peranti lokal', localTag: 'LOKAL', chatView: 'Chat AI', terminalView: 'Terminal lokal',
+    workspaceType: 'Peribadi', workspaceSection: 'RUANG KERJA', navChat: 'Chat AI', navTerminal: 'Terminal lokal', navTools: 'Tools & integrasi', navProviders: 'Penyedia AI', coreAgents: 'EJEN TERAS', freeOptions: 'PILIHAN PERCUMA', localTermux: 'Termux lokal', checkConnection: 'Semak sambungan', profileName: 'Pengguna Ghost Platform', profileSubtitle: 'Peranti lokal', localTag: 'LOKAL', chatView: 'Chat AI', terminalView: 'Terminal lokal', toolsView: 'Tools & integrasi',
+    toolsTitle: 'Tools untuk Ghost Platform', toolsSubtitle: 'Alat GitHub yang boleh menyambung ejen AI kepada Termux dan Android.', toolsNote: 'Arahan pemasangan hanya dimasukkan ke Terminal untuk awak semak.', toolsRefresh: 'Periksa alat', toolGuidanceTitle: 'Cadangan untuk telefon ini', toolGuidanceText: 'Mulakan dengan Termux:API untuk fungsi peranti. Tambah Termux-MCP hanya jika awak perlukan tool registry dan kawalan risiko lebih terperinci. CLI-Hub boleh meluaskan katalog, tetapi semak keperluan setiap alat kerana kebanyakannya sasarkan aplikasi desktop.', toolAvailable: 'Tersedia', toolNotFound: 'Belum dipasang', toolServerOnline: 'Server aktif', toolServerOffline: 'Server tidak aktif', toolInstall: 'Sediakan arahan', toolRepo: 'Repositori GitHub', toolWhy: 'Kegunaan', toolNeeds: 'Keperluan', toolLicense: 'Lesen', toolQueued: 'Arahan disediakan di Terminal. Semak sebelum menjalankannya.',
     chatTitle: 'Ruang untuk berfikir.', chatSubtitle: 'Pilih model, berbual, dan bawa arahan ke Termux bila awak bersedia.', manageConnections: 'Sambungan', providerInfo: 'Butiran & privasi', welcomeKicker: 'GHOST PLATFORM · RUANG AI', welcomeTitle: 'Hai! Apa yang kita bina hari ini?', welcomeText: 'Tanya soalan, minta bantuan kod, atau minta arahan Termux. Semak arahan sebelum menjalankannya.',
     suggestionProject: 'Fahami projek ini', suggestionStorage: 'Semak storan Termux', suggestionPlan: 'Rancang sambungan AI', enterHint: 'Enter untuk hantar', chatPlaceholder: 'Tulis mesej kepada AI…', send: 'Hantar', chatFootnote: 'Jangan hantar kata laluan atau data sulit. Model percuma mungkin mempunyai had penggunaan.',
     collabTitle: 'Panel kolaborasi', collabCaption: 'Pilih sekurang-kurangnya 2 ejen untuk banding dan satukan jawapan.', collabButton: 'Kerjasama AI', terminalTitle: 'Terminal lokal', terminalSubtitle: 'Arahan dijalankan pada Termux di telefon ini. Semak arahan sebelum menjalankannya.', deviceLabel: 'PERANTI BERSAMBUNG', local: 'LOKAL', ready: 'sedia', commandLabel: 'ARAHAN YANG AKAN DIJALANKAN', commandPlaceholder: 'Contoh: pwd && ls -la', run: 'Jalankan', output: 'OUTPUT', clear: 'Kosongkan', waiting: 'Menunggu arahan…', terminalFoot: '⚠ Berjalan sebagai pengguna Termux semasa.', notRun: 'Belum ada arahan', terminalNoteTitle: 'Arahan daripada AI perlu disemak', terminalNoteText: 'Arahan AI hanya berjalan selepas awak beri izin.', footer: 'Dashboard lokal untuk Termux',
@@ -18,7 +19,8 @@ const localeMessages = {
     collabAvailable: n => `${n} ejen sedia · pilih sekurang-kurangnya 2 untuk berbincang.`, collabNeedMore: 'Sambungkan sekurang-kurangnya 2 ejen untuk memulakan kolaborasi.', pending: name => `${name} sedang berfikir…`, panelPending: n => `Panel ${n} ejen`, resultReady: 'Panel AI selesai membandingkan jawapan.', resultInContext: 'Hasil Termux tersedia dalam konteks chat.', commandReview: 'Semak dalam Terminal →', commandRun: 'Jalankan dengan izin', commandMoved: 'Arahan dimasukkan untuk semakan. Belum dijalankan.', commandConfirm: 'Benarkan arahan ini berjalan sebagai pengguna Termux?', terminalConnected: 'Termux bersambung', serverOffline: 'Server lokal tidak menjawab', startServer: 'Mulakan semula node server.js',
   },
   en: {
-    workspaceType: 'Personal', workspaceSection: 'WORKSPACE', navChat: 'AI chat', navTerminal: 'Local terminal', navProviders: 'AI providers', coreAgents: 'CORE AGENTS', freeOptions: 'FREE OPTIONS', localTermux: 'Local Termux', checkConnection: 'Check connection', profileName: 'Ghost Platform user', profileSubtitle: 'Local device', localTag: 'LOCAL', chatView: 'AI chat', terminalView: 'Local terminal',
+    workspaceType: 'Personal', workspaceSection: 'WORKSPACE', navChat: 'AI chat', navTerminal: 'Local terminal', navTools: 'Tools & integrations', navProviders: 'AI providers', coreAgents: 'CORE AGENTS', freeOptions: 'FREE OPTIONS', localTermux: 'Local Termux', checkConnection: 'Check connection', profileName: 'Ghost Platform user', profileSubtitle: 'Local device', localTag: 'LOCAL', chatView: 'AI chat', terminalView: 'Local terminal', toolsView: 'Tools & integrations',
+    toolsTitle: 'Tools for Ghost Platform', toolsSubtitle: 'GitHub tools that connect AI agents to Termux and Android.', toolsNote: 'Install commands are only placed in Terminal for you to review.', toolsRefresh: 'Check tools', toolGuidanceTitle: 'Recommended for this phone', toolGuidanceText: 'Start with Termux:API for device features. Add Termux-MCP if you need a richer tool registry and risk controls. CLI-Hub can expand the catalog, but check each tool’s requirements because many target desktop applications.', toolAvailable: 'Available', toolNotFound: 'Not installed', toolServerOnline: 'Server running', toolServerOffline: 'Server not running', toolInstall: 'Prepare command', toolRepo: 'GitHub repository', toolWhy: 'Use', toolNeeds: 'Requirements', toolLicense: 'License', toolQueued: 'Command prepared in Terminal. Review it before running.',
     chatTitle: 'A space to think.', chatSubtitle: 'Choose a model, chat, and send commands to Termux when you are ready.', manageConnections: 'Connections', providerInfo: 'Details & privacy', welcomeKicker: 'GHOST PLATFORM · AI WORKSPACE', welcomeTitle: 'Hi! What are we building today?', welcomeText: 'Ask a question, get coding help, or request a Termux command. Review commands before running them.',
     suggestionProject: 'Explore this project', suggestionStorage: 'Check Termux storage', suggestionPlan: 'Plan an AI setup', enterHint: 'Enter to send', chatPlaceholder: 'Message an AI…', send: 'Send', chatFootnote: 'Do not send passwords or sensitive data. Free models may have usage limits.',
     collabTitle: 'Collaboration panel', collabCaption: 'Choose at least 2 agents to compare and combine their answers.', collabButton: 'Collaborate', terminalTitle: 'Local terminal', terminalSubtitle: 'Commands run in Termux on this phone. Review commands before running them.', deviceLabel: 'DEVICE CONNECTED', local: 'LOCAL', ready: 'ready', commandLabel: 'COMMAND TO RUN', commandPlaceholder: 'Example: pwd && ls -la', run: 'Run', output: 'OUTPUT', clear: 'Clear', waiting: 'Waiting for a command…', terminalFoot: '⚠ Runs as the current Termux user.', notRun: 'No commands yet', terminalNoteTitle: 'Review AI commands', terminalNoteText: 'AI commands only run after you approve them.', footer: 'Local dashboard for Termux',
@@ -50,7 +52,7 @@ function applyPreferences() {
   document.title = language === 'ms' ? 'Ghost Platform · Ruang Kerja Termux' : 'Ghost Platform · Termux workspace';
   const labels = {
     'workspace-type': 'workspaceType', 'workspace-section': 'workspaceSection', 'nav-chat-label': 'navChat', 'nav-terminal-label': 'navTerminal',
-    'nav-providers-label': 'navProviders', 'core-label': 'coreAgents', 'free-label': 'freeOptions', 'local-title': 'localTermux',
+    'nav-providers-label': 'navProviders', 'nav-tools-label': 'navTools', 'core-label': 'coreAgents', 'free-label': 'freeOptions', 'local-title': 'localTermux',
     'refresh-label': 'checkConnection', 'profile-name': 'profileName', 'profile-subtitle': 'profileSubtitle', 'local-tag': 'localTag',
     'chat-title': 'chatTitle', 'chat-subtitle': 'chatSubtitle', 'manage-label': 'manageConnections', 'provider-info-label': 'providerInfo',
     'welcome-kicker': 'welcomeKicker', 'welcome-title': 'welcomeTitle', 'welcome-text': 'welcomeText', 'suggestion-project': 'suggestionProject',
@@ -62,6 +64,7 @@ function applyPreferences() {
     'settings-eyebrow': 'settingsEyebrow', 'settings-title': 'settingsTitle', 'settings-subtitle': 'settingsSubtitle',
     'appearance-title': 'appearance', 'appearance-description': 'appearanceDescription', 'theme-label': 'themeLabel',
     'language-label': 'languageLabel', 'security-text': 'security', 'modal-footer-note': 'modalFooter', 'done-settings': 'done',
+    'tools-title': 'toolsTitle', 'tools-subtitle': 'toolsSubtitle', 'tools-note': 'toolsNote', 'tools-refresh-label': 'toolsRefresh', 'tool-guidance-title': 'toolGuidanceTitle', 'tool-guidance-text': 'toolGuidanceText',
   };
   for (const [id, key] of Object.entries(labels)) {
     const node = document.getElementById(id);
@@ -86,7 +89,7 @@ function applyPreferences() {
   $('#chat-input').placeholder = tr('chatPlaceholder');
   $('#chat-input').setAttribute('aria-label', tr('chatPlaceholder'));
   $('#command').placeholder = tr('commandPlaceholder');
-  $('#crumb-title').textContent = $('#terminal-view').classList.contains('active') ? tr('terminalView') : tr('chatView');
+  $('#crumb-title').textContent = $('#terminal-view').classList.contains('active') ? tr('terminalView') : ($('#tools-view').classList.contains('active') ? tr('toolsView') : tr('chatView'));
   const providerLabels = language === 'ms'
     ? { openrouter: 'OpenRouter · Percuma', gemini: 'Google Gemini · Tier percuma', groq: 'Groq · Tier percuma', codex: 'Codex · CLI lokal', opencode: 'OpenCode · CLI lokal' }
     : { openrouter: 'OpenRouter · Free', gemini: 'Google Gemini · Free tier', groq: 'Groq · Free tier', codex: 'Codex · local CLI', opencode: 'OpenCode · local CLI' };
@@ -95,6 +98,7 @@ function applyPreferences() {
   updateSelectedProvider();
   renderCollabOptions();
   renderSettings();
+  if ($('#tools-view').classList.contains('active')) refreshTools();
 }
 
 function toast(message) {
@@ -369,11 +373,70 @@ async function refreshStatus() {
 }
 
 function switchView(view) {
-  const terminal = view === 'terminal';
-  $('#chat-view').classList.toggle('active', !terminal);
-  $('#terminal-view').classList.toggle('active', terminal);
+  for (const name of ['chat', 'terminal', 'tools']) $(`#${name}-view`).classList.toggle('active', view === name);
   document.querySelectorAll('.nav-link[data-view]').forEach(button => button.classList.toggle('active', button.dataset.view === view));
-  $('#crumb-title').textContent = terminal ? tr('terminalView') : tr('chatView');
+  $('#crumb-title').textContent = tr(view === 'terminal' ? 'terminalView' : view === 'tools' ? 'toolsView' : 'chatView');
+  if (view === 'tools') refreshTools();
+}
+
+async function refreshTools() {
+  const box = $('#tool-cards');
+  if (!box) return;
+  box.replaceChildren();
+  const loading = document.createElement('p');
+  loading.className = 'tools-loading';
+  loading.textContent = language === 'ms' ? 'Memeriksa alat lokal…' : 'Checking local tools…';
+  box.append(loading);
+  try {
+    const response = await fetch('/api/tools');
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error || 'Could not load tools');
+    box.replaceChildren();
+    const why = {
+      'cli-hub': language === 'ms' ? 'Cari, periksa dan urus CLI yang mesra ejen. Katalog tidak memasang alat secara automatik; semak keperluan setiap CLI untuk Android.' : 'Discover, inspect and manage agent-ready CLIs. The catalog does not install tools automatically; check each CLI’s Android requirements.',
+      'termux-mcp': language === 'ms' ? 'Tambah tool Termux berstruktur, output streaming dan kawalan risiko. Projek komuniti; semak polisi sebelum sambungkan ejen.' : 'Adds structured Termux tools, streaming output and risk gates. Community project; review its policies before connecting agents.',
+      'termux-api': language === 'ms' ? 'Add-on rasmi Termux untuk fungsi peranti Android tertentu. Android mungkin meminta kebenaran bagi setiap fungsi.' : 'Official Termux add-on for selected Android device features. Android may request permissions for each feature.',
+    };
+    const needs = {
+      'cli-hub': language === 'ms' ? 'Python/pip; sesetengah CLI perlukan aplikasi desktop atau pakej tambahan.' : 'Python/pip; some CLIs need desktop apps or extra packages.',
+      'termux-mcp': language === 'ms' ? 'Python/pip; server lokal berasingan. Kekalkan bind loopback.' : 'Python/pip; separate local service. Keep it bound to loopback.',
+      'termux-api': language === 'ms' ? 'Aplikasi Termux:API Android daripada sumber yang sama, pakej Termux dan izin Android.' : 'Termux:API Android companion from the same source, Termux package and Android permissions.',
+    };
+    for (const item of data.tools || []) {
+      const card = document.createElement('article');
+      card.className = 'tool-card';
+      const head = document.createElement('div'); head.className = 'tool-card-head';
+      const title = document.createElement('h2'); title.textContent = item.name;
+      const status = document.createElement('span');
+      status.className = `tool-status${item.installed ? ' ready' : ''}`;
+      status.textContent = item.id === 'termux-mcp' && data.termuxMcpRunning ? tr('toolServerOnline') : (item.installed ? tr('toolAvailable') : tr('toolNotFound'));
+      head.append(title, status);
+      const description = document.createElement('p'); description.textContent = why[item.id] || item.why;
+      const meta = document.createElement('div'); meta.className = 'tool-meta';
+      for (const [label, value] of [[tr('toolNeeds'), needs[item.id] || item.needs], [tr('toolLicense'), item.license]]) {
+        const row = document.createElement('div'); const b = document.createElement('b'); b.textContent = `${label}: `; row.append(b, document.createTextNode(value)); meta.append(row);
+      }
+      const actions = document.createElement('div'); actions.className = 'tool-actions';
+      const repo = document.createElement('a'); repo.href = item.github; repo.target = '_blank'; repo.rel = 'noopener noreferrer'; repo.textContent = tr('toolRepo');
+      actions.append(repo);
+      if (!item.installed) {
+        const prepare = document.createElement('button'); prepare.type = 'button'; prepare.textContent = tr('toolInstall');
+        prepare.addEventListener('click', () => {
+          $('#command').value = item.install;
+          switchView('terminal');
+          $('#command').focus();
+          toast(tr('toolQueued'));
+        });
+        actions.append(prepare);
+      }
+      card.append(head, description, meta, actions); box.append(card);
+    }
+  } catch (error) {
+    box.replaceChildren();
+    const message = document.createElement('p'); message.className = 'tools-loading';
+    message.textContent = language === 'ms' ? `Pemeriksaan alat gagal: ${error.message}` : `Could not check tools: ${error.message}`;
+    box.append(message);
+  }
 }
 
 function openSettings() { $('#settings-modal').hidden = false; }
@@ -457,6 +520,7 @@ $('#language-select').addEventListener('change', event => {
   refreshConnections();
 });
 $('#provider-select').addEventListener('change', updateSelectedProvider);
+$('#refresh-tools').addEventListener('click', refreshTools);
 document.querySelectorAll('.mode-option').forEach(button => button.addEventListener('click', () => {
   workMode = button.dataset.mode;
   localStorage.setItem('ghost-mode', workMode);

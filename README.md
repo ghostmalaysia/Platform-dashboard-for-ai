@@ -1,6 +1,6 @@
 # Ghost Platform · Termux workspace
 
-Dashboard lokal untuk berbual dengan beberapa ejen AI, meminta mereka membandingkan jawapan, dan menghantar cadangan arahan ke Termux pada telefon yang sama. Susun atur pemilihan model dan mod Chat/AI Agent mengambil inspirasi umum daripada aliran kerja produk AI seperti Abacus.AI, dengan identiti dan sambungan Termux Ghost Platform.
+Dashboard lokal untuk berbual dengan ejen AI, menjalankan panel tetap tiga AI secara serentak, dan menghantar cadangan arahan ke Termux pada telefon yang sama. Panel tetap menggunakan Codex (semakan kod), OpenCode (perancangan tindakan), dan Gemini 2.5 Flash free tier (penyelidikan serta sintesis). Setiap ejen mempunyai kepakaran tersendiri; Gemini menyatukan jawapan akhir.
 
 ## Mula dalam Termux
 
@@ -10,9 +10,15 @@ cd Platform-dashboard-for-ai
 node server.js
 ```
 
-Buka `http://127.0.0.1:3000` pada pelayar Android. Gunakan alamat itu dengan tepat: server hanya menerima `Host` dan `Origin` untuk alamat tersebut, dan hanya menerima permintaan `POST` berbentuk JSON. Tiada pakej Node tambahan diperlukan. Hentikan server dengan `Ctrl+C`. Pemboleh ubah `PORT` boleh ditukar, tetapi APK dan dashboard mengandaikan port 3000.
+Buka `http://127.0.0.1:3000` pada pelayar Android. **Daftar akaun dahulu** pada skrin masuk sebelum dashboard dipaparkan. Gunakan alamat itu dengan tepat: server hanya menerima `Host` dan `Origin` untuk alamat tersebut, dan hanya menerima permintaan `POST` berbentuk JSON. Tiada pakej Node tambahan diperlukan. Hentikan server dengan `Ctrl+C`. Pemboleh ubah `PORT` boleh ditukar, tetapi APK dan dashboard mengandaikan port 3000.
 
-Pilih tema hitam, biru gelap atau hijau hacker serta Bahasa Melayu atau English melalui **Penyedia AI → Penampilan**. Tetapan disimpan dalam pelayar peranti. Mod **Chat** menjawab seperti perbualan biasa; **AI Agent** meminta model merancang tugasan dan tindakan dengan lebih berstruktur, termasuk dalam panel kolaborasi. Arahan Termux masih perlu disemak dan diluluskan secara berasingan. Hanya blok kod `bash`, `sh`, `shell` atau `termux` yang menjadi kad arahan boleh jalankan; blok kod lain dipaparkan sebagai teks sahaja. Pintasan `Ctrl/⌘+1`, `+2`, `+3` bertukar antara Chat, Terminal dan Tools.
+Pilih tema hitam, biru gelap atau hijau hacker serta Bahasa Melayu atau English melalui **Penyedia AI → Penampilan**. Tetapan disimpan dalam pelayar peranti. Mod **Chat** menjawab seperti perbualan biasa; **AI Agent** meminta model merancang tugasan dan tindakan dengan lebih berstruktur, termasuk dalam panel kolaborasi. Panel kolaborasi hanya aktif apabila Codex dan OpenCode dipasang serta Gemini disambung. Ketiga-tiga ejen dipanggil serentak oleh server; jika satu gagal, panel tetap meneruskan dengan dua jawapan dan memaklumkan keadaan tersebut. Arahan Termux masih perlu disemak dan diluluskan secara berasingan. Hanya blok kod `bash`, `sh`, `shell` atau `termux` yang menjadi kad arahan boleh jalankan; blok kod lain dipaparkan sebagai teks sahaja. Pintasan `Ctrl/⌘+1`, `+2`, `+3` bertukar antara Chat, Terminal dan Tools.
+
+## Akaun & akses
+
+Skrin **Daftar / Log masuk** muncul sebelum dashboard. Pendaftaran memerlukan emel sah dan kata laluan 8–128 aksara; nama paparan adalah pilihan. Kata laluan dihash dengan `scrypt` (garam rawak 16 bait) dan disimpan bersama senarai akaun dalam `data/accounts.json` pada peranti yang menjalankan server. Fail itu dibuat dengan kebenaran `0600` dan dikecualikan daripada Git. Gunakan `GHOST_DATA_DIR` untuk meletakkan fail akaun di lokasi lain.
+
+Sesi berbentuk cookie `HttpOnly`, `SameSite=Strict` selama 7 hari dan tidak boleh dibaca oleh JavaScript. Semua endpoint `/api/*` kecuali `/api/auth/status`, `/api/auth/register`, `/api/auth/login` dan `/api/auth/logout` memerlukan sesi sah; tanpa itu server membalas `401`. Butang **Log keluar** di bar atas memadam sesi dan memuat semula skrin masuk. Pendaftaran terbuka kepada sesiapa yang boleh mencapai `127.0.0.1`; jangan dedahkan server ke LAN atau internet. Ini bukan sistem akaun awan dan tidak menghantar kod pengesahan emel.
 
 ## Tools GitHub
 
@@ -46,7 +52,7 @@ Kunci yang ditaip dalam dashboard disimpan dalam memori server sahaja dan hilang
 
 ## Kolaborasi
 
-Pilih sekurang-kurangnya dua ejen yang tersedia, kemudian tekan **Kerjasama AI**. Pilihan ejen kekal semasa menukar tema, bahasa atau mod. Ejen menjawab tugasan yang sama; ejen utama membaca jawapan tersebut dan menghasilkan sintesis. Mod Chat/AI Agent turut digunakan oleh panel ini. Setiap respons API menggunakan kuota penyedia.
+Tekan **Kerjasama AI** untuk menjalankan panel tetap Codex + OpenCode + Gemini pada tugasan yang sama. Ketiga-tiga panggilan dibuat serentak (`Promise.all` di server) dengan arahan kepakaran berbeza: Codex menumpukan semakan kod/struktur, OpenCode kepada pelan tindakan selamat, dan Gemini kepada penemuan jurang serta sintesis. Gemini adalah ejen utama lalai; jika ia gagal, server memilih ejen berjaya lain untuk menyintesiskan jawapan. Panel kekal semasa menukar tema, bahasa atau mod. Mod Chat/AI Agent turut digunakan oleh panel ini. Setiap respons API menggunakan kuota penyedia.
 
 ## Memori & pemindahan
 
@@ -82,12 +88,12 @@ Guna **Penyedia AI → Memori & pemindahan** untuk **Segerak**, **Eksport** (JSO
 
 ## Projek & ejen terpilih
 
-Bar **Projek** di atas panel chat membolehkan projek dibuat/ditukar dan butiran dibuka melalui **Urus AI & fail**. Dalam satu projek, pilih 2 hingga 5 ejen (maksimum 5), tetapkan ejen utama, simpan fail kongsi, dan tulis nota memori berasingan untuk setiap ejen. Fail kongsi dan memori ejen disuntik ke konteks sebagai data rujukan; kandungan fail tidak dibenarkan mengatasi arahan pengguna. Panel kolaborasi dan chat menggunakan senarai ejen projek semasa. `history` juga dipisahkan mengikut `metadata.projectId`.
+Bar **Projek** di atas panel chat membolehkan projek dibuat/ditukar dan butiran dibuka melalui **Urus AI & fail**. Setiap projek menggunakan panel tetap tiga ejen (Codex, OpenCode, Gemini); anda boleh memilih ejen utama, simpan fail kongsi, dan tulis nota memori berasingan untuk setiap ejen. Fail kongsi dan memori ejen disuntik ke konteks sebagai data rujukan; kandungan fail tidak dibenarkan mengatasi arahan pengguna. `history` dipisahkan mengikut `metadata.projectId`.
 
-Setiap ejen menerima konteks projek yang berbeza: fail kongsi sama untuk semua, tetapi nota memori hanya untuk ejen itu. Ejen utama projek menghasilkan sintesis kolaborasi apabila tersedia dalam senarai ejen. Konteks projek dihantar kepada penyedia cloud yang dipilih, jangan simpan kata laluan atau data sulit dalam fail kongsi.
+Setiap ejen menerima konteks projek yang berbeza: fail kongsi sama untuk semua, tetapi nota memori hanya untuk ejen itu. Ejen utama projek (Gemini secara lalai) menghasilkan sintesis kolaborasi. Konteks projek dihantar kepada Gemini free tier, jangan simpan kata laluan atau data sulit dalam fail kongsi.
 
 ## Termux lokal
 
-Server hanya bind pada `127.0.0.1`, menyekat `Host`/`Origin` bukan tempatan, memerlukan JSON untuk `POST`, menambah header keselamatan (termasuk CSP), dan mengehad kadar permintaan setiap laluan dalam ingatan. Arahan daripada AI boleh dipindahkan ke terminal untuk disemak, atau **Jalankan dengan izin** akan meminta pengesahan sebelum menjalankan arahan. Output Termux dipendekkan kepada 4,000 aksara sebelum dimasukkan ke konteks chat untuk giliran seterusnya; ia tetap dihantar kepada penyedia cloud yang dipilih, jadi semak output sebelum bertanya semula. Arahan berjalan sebagai pengguna Termux yang menjalankan server, dengan akses yang sama kepada fail dan program pengguna itu. Jangan dedahkan server ke LAN atau internet.
+Server hanya bind pada `127.0.0.1`, menyekat `Host`/`Origin` bukan tempatan, memerlukan JSON untuk `POST`, menambah header keselamatan (termasuk CSP), dan mengehad kadar permintaan setiap laluan dalam ingatan. Arahan daripada AI boleh dipindahkan ke terminal untuk disemak, atau **Jalankan dengan izin** akan meminta pengesahan sebelum menjalankan arahan. Tiada arahan auto-dijalankan. Selepas arahan berjaya, butang **Minta AI semak output** menghantar output (dipendekkan kepada 4,000 aksara) kembali ke panel tiga AI sebagai data, bukan arahan, untuk cadangan langkah seterusnya. Output Termux tetap dihantar kepada Gemini free tier apabila panel digunakan, jadi semak output terlebih dahulu. Arahan berjalan sebagai pengguna Termux yang menjalankan server, dengan akses yang sama kepada fail dan program pengguna itu. Jangan dedahkan server ke LAN atau internet.
 
-Pendaftaran pelanggan belum disambungkan dalam build ini. Memori boleh disegerakkan ke Supabase apabila pemboleh ubah persekitaran disediakan; tanpa itu, perbualan hanya kekal pada peranti dan dalam memori server semasa. Jangan anggap akaun pengguna telah wujud.
+Akaun tempatan kini berasingan daripada identiti Supabase: ia hanya mengawal akses dashboard pada peranti ini. Memori boleh disegerakkan ke Supabase apabila pemboleh ubah persekitaran disediakan; tanpa itu, perbualan hanya kekal pada peranti dan dalam memori server semasa. Jangan anggap akaun pengguna telah disahkan oleh perkhidmatan awan.

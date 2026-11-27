@@ -9,8 +9,28 @@
   <link rel="stylesheet" href="/style-overrides.css">
 </head>
 <body>
-  <a class="skip-link" id="skip-link" href="#chat-input">Langsung ke chat</a>
-  <div class="app-shell">
+  <section class="auth-screen" id="auth-screen">
+    <div class="auth-card">
+      <div class="auth-mark">✳</div>
+      <div class="auth-kicker" id="auth-kicker">GHOST PLATFORM · AKSES LOKAL</div>
+      <h1 id="auth-title">Daftar akaun anda</h1>
+      <p id="auth-subtitle">Akaun diperlukan sebelum dashboard Termux dibuka.</p>
+      <div class="auth-tabs" role="group" aria-label="Mod akaun">
+        <button type="button" id="auth-register-tab" class="active" aria-pressed="true">Daftar</button>
+        <button type="button" id="auth-login-tab" aria-pressed="false">Log masuk</button>
+      </div>
+      <form id="auth-form">
+        <label id="auth-name-row"><span>Nama paparan</span><input id="auth-name" maxlength="64" autocomplete="name"></label>
+        <label><span id="auth-email-label">Emel</span><input id="auth-email" type="email" maxlength="254" autocomplete="email" required></label>
+        <label><span id="auth-password-label">Kata laluan</span><input id="auth-password" type="password" minlength="8" maxlength="128" autocomplete="new-password" required></label>
+        <div class="auth-error" id="auth-error" role="alert"></div>
+        <button type="submit" id="auth-submit">Buat akaun</button>
+      </form>
+      <p class="auth-foot" id="auth-foot">Akaun disimpan pada peranti ini. Kata laluan dihash dengan scrypt.</p>
+    </div>
+  </section>
+  <a class="skip-link" id="skip-link" href="#chat-input" hidden>Langsung ke chat</a>
+  <div class="app-shell" id="app-shell" hidden>
     <aside class="sidebar">
       <a class="brand" href="/"><span class="brand-symbol">✳</span><span>Ghost<span> Platform</span></span></a>
       <div class="workspace-picker"><span class="workspace-avatar">G</span><span><b>Ghost Platform</b><small id="workspace-type">Peribadi</small></span><span class="chevron">⌄</span></div>
@@ -31,14 +51,14 @@
       <div class="profile"><span class="profile-avatar">G</span><span><b id="profile-name">Pengguna Ghost Platform</b><small id="profile-subtitle">Peranti lokal</small></span><span class="profile-menu">•••</span></div>
     </aside>
     <main class="main-area">
-      <header class="topbar"><div class="breadcrumbs"><span>Ghost Platform</span><span class="slash">/</span><b id="crumb-title">Chat AI</b></div><div class="top-actions"><span class="privacy-label"><span class="pulse-dot"></span> <span id="local-tag">LOKAL</span></span><button class="icon-button" id="top-settings" aria-label="Tetapan penyedia">⚙</button></div></header>
+      <header class="topbar"><div class="breadcrumbs"><span>Ghost Platform</span><span class="slash">/</span><b id="crumb-title">Chat AI</b></div><div class="top-actions"><span class="privacy-label"><span class="pulse-dot"></span> <span id="local-tag">LOKAL</span></span><button class="icon-button" id="top-settings" aria-label="Tetapan penyedia">⚙</button><button class="icon-button" id="logout-button" aria-label="Log keluar" title="Log keluar">↪</button></div></header>
       <section class="view active" id="chat-view">
         <div class="chat-layout">
           <div class="chat-heading"><div><div class="eyebrow"><span class="spark">✳</span> AI WORKSPACE</div><h1 id="chat-title">Ruang untuk berfikir.</h1><p id="chat-subtitle">Pilih model, berbual, dan bawa arahan ke Termux bila awak bersedia.</p></div><div class="chat-heading-actions"><div class="select-wrap"><span class="provider-status" id="selected-dot"></span><select id="provider-select" aria-label="Pilih penyedia atau ejen"><option value="openrouter">OpenRouter · Free</option><option value="gemini">Google Gemini · Free tier</option><option value="groq">Groq · Free tier</option><option value="codex">Codex · local CLI</option><option value="opencode">OpenCode · local CLI</option></select><span class="select-arrow">⌄</span></div><button class="secondary-button" id="manage-keys"><span id="manage-label">Sambungan</span> <span>↗</span></button></div></div>
           <div class="mode-switch" role="group" aria-label="Pilih mod AI"><button type="button" class="mode-option active" data-mode="chat" aria-pressed="true"><span>◌</span><span><b id="mode-chat-title">Chat</b><small id="mode-chat-description">Bual dengan model yang dipilih</small></span></button><button type="button" class="mode-option" data-mode="agent" aria-pressed="false"><span>✧</span><span><b id="mode-agent-title">AI Agent</b><small id="mode-agent-description">Rancang tugasan dan tindakan Termux</small></span></button></div>
           <div class="project-bar"><label for="project-select" id="project-label">Projek</label><select id="project-select" aria-label="Pilih projek"><option value="">Tiada projek</option></select><button type="button" class="project-new" id="project-new" aria-label="Projek baru">+</button><button type="button" class="secondary-button" id="project-manage"><span id="project-manage-text">Urus AI &amp; fail</span></button><span class="project-summary" id="project-summary">0 AI · 0 fail</span></div>
           <div class="provider-strip"><span class="strip-icon">✦</span><span id="provider-description">OpenRouter memilih model percuma secara automatik.</span><button id="provider-info"><span id="provider-info-label">Butiran & privasi</span> <span>↗</span></button></div>
-          <div class="collab-row"><div class="collab-caption"><b id="collab-title">Panel kolaborasi</b><small id="collab-caption">Pilih sekurang-kurangnya 2 ejen untuk banding dan satukan jawapan.</small></div><div class="collab-agents" id="collab-agents"></div><button class="collab-button" id="collab-button" type="button">✦ <span id="collab-button-label">Kerjasama AI</span></button></div>
+          <div class="collab-row"><div class="collab-caption"><b id="collab-title">Panel kolaborasi</b><small id="collab-caption">3 AI serentak · Codex semak kod, OpenCode rancang tindakan, Gemini sintesiskan jawapan.</small></div><div class="collab-agents" id="collab-agents"></div><button class="collab-button" id="collab-button" type="button">✦ <span id="collab-button-label">Kerjasama AI</span></button></div>
           <div class="chat-panel">
             <div class="messages" id="messages" aria-live="polite">
             <div class="welcome" id="welcome"><div class="welcome-mark">✳</div><span class="welcome-kicker" id="welcome-kicker">GHOST PLATFORM · RUANG AI</span><h2 id="welcome-title">Hai! Apa yang kita bina hari ini?</h2><p id="welcome-text">Tanya soalan, minta bantuan kod, atau minta arahan Termux. Jawapan arahan akan masuk ke terminal untuk awak semak dahulu.</p><div class="suggestions"><button data-prompt-ms="Bantu saya fahami struktur projek ini." data-prompt-en="Help me understand this project's structure."><span>⌘</span><span id="suggestion-project">Fahami projek ini</span></button><button data-prompt-ms="Tunjukkan arahan Termux untuk semak penggunaan storan." data-prompt-en="Show me Termux commands to check storage usage."><span>▤</span><span id="suggestion-storage">Semak storan Termux</span></button><button data-prompt-ms="Cadangkan cara sambungkan beberapa AI dengan selamat." data-prompt-en="Suggest a safe way to connect multiple AIs."><span>✧</span><span id="suggestion-plan">Rancang sambungan AI</span></button></div></div>
@@ -50,7 +70,7 @@
       </section>
       <section class="view" id="terminal-view">
         <div class="terminal-page"><div class="terminal-heading"><div class="eyebrow"><span class="spark">⌘</span> DEVICE BRIDGE</div><h1 id="terminal-title">Terminal lokal</h1><p id="terminal-subtitle">Arahan dijalankan pada Termux di telefon ini. Semak arahan sebelum menekan Jalankan.</p></div><div class="device-summary"><div class="device-icon">⌂</div><div><span id="device-label">PERANTI BERSAMBUNG</span><b id="terminal-device-status">Menyambung…</b><small id="terminal-cwd">Direktori kerja sedang diperiksa</small></div><span class="device-live"><i class="pulse-dot" id="device-live-dot"></i> <span id="device-local-label">LOKAL</span></span></div>
-          <div class="terminal-card" id="terminal-card"><div class="terminal-title"><div class="window-dots"><i></i><i></i><i></i></div><span>termux <span class="muted">·</span> shell</span><span class="terminal-live"><i class="pulse-dot"></i> <span id="terminal-ready-label">sedia</span></span></div><form id="command-form"><label for="command" id="command-label">ARAHAN YANG AKAN DIJALANKAN</label><div class="input-row"><span class="prompt">$</span><input id="command" autocomplete="off" spellcheck="false" placeholder="Contoh: pwd && ls -la"><button id="run-button" type="submit"><span>▶</span> <span id="run-label">Jalankan</span></button></div></form><div class="output-wrap"><div class="output-label"><span id="output-label">OUTPUT</span><button type="button" id="clear-output"><span id="clear-label">Kosongkan</span></button></div><pre id="output">Menunggu arahan…</pre></div><div class="terminal-foot"><span id="terminal-footnote">⚠ Berjalan sebagai pengguna Termux semasa.</span><span id="last-run">Belum ada arahan</span></div></div>
+          <div class="terminal-card" id="terminal-card"><div class="terminal-title"><div class="window-dots"><i></i><i></i><i></i></div><span>termux <span class="muted">·</span> shell</span><span class="terminal-live"><i class="pulse-dot"></i> <span id="terminal-ready-label">sedia</span></span></div><form id="command-form"><label for="command" id="command-label">ARAHAN YANG AKAN DIJALANKAN</label><div class="input-row"><span class="prompt">$</span><input id="command" autocomplete="off" spellcheck="false" placeholder="Contoh: pwd && ls -la"><button id="run-button" type="submit"><span>▶</span> <span id="run-label">Jalankan</span></button></div></form><div class="output-wrap"><div class="output-label"><span id="output-label">OUTPUT</span><span class="output-actions"><button type="button" id="output-review" disabled><span id="output-review-label">Minta AI semak output</span></button><button type="button" id="clear-output"><span id="clear-label">Kosongkan</span></button></span></div><pre id="output">Menunggu arahan…</pre></div><div class="terminal-foot"><span id="terminal-footnote">⚠ Berjalan sebagai pengguna Termux semasa.</span><span id="last-run">Belum ada arahan</span></div></div>
           <div class="terminal-note"><span>◈</span><div><b id="terminal-note-title">Arahan daripada AI perlu disemak</b><p id="terminal-note-text">Arahan AI hanya berjalan selepas awak beri izin.</p></div></div></div>
       </section>
       <section class="view" id="tools-view">
